@@ -48,6 +48,40 @@ html.js .section.is-visible > * {
   translate: 0 0;
 }
 
+@keyframes gentleWiggle {
+  0%, 100% {
+    rotate: -1deg;
+    translate: 0 0;
+  }
+  50% {
+    rotate: 1deg;
+    translate: 0 -3px;
+  }
+}
+
+@keyframes gentleFloat {
+  0%, 100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -4px;
+  }
+}
+
+.hero__content h1,
+.hero__names,
+.section__title,
+.footer__thanks {
+  animation: gentleWiggle 4.2s ease-in-out infinite;
+}
+
+.doodle--sparkles,
+.calendar-doodle,
+.venue-doodle,
+.concept__art {
+  animation: gentleFloat 4.8s ease-in-out infinite;
+}
+
 .hero {
   min-height: 100svh;
   position: relative;
@@ -181,5 +215,16 @@ dd { margin: 0; font-family: "DynaPuff", sans-serif; font-size: 1.8rem; letter-s
     opacity: 1;
     translate: none;
     transition: none;
+  }
+
+  .hero__content h1,
+  .hero__names,
+  .section__title,
+  .footer__thanks,
+  .doodle--sparkles,
+  .calendar-doodle,
+  .venue-doodle,
+  .concept__art {
+    animation: none !important;
   }
 }
