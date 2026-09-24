@@ -209,17 +209,24 @@ h1 span {
 }
 
 .greeting {
-  min-height: 300px;
-  align-items: center;
+  min-height: 0;
+  align-items: start;
 }
 
 .greeting__body {
-  font-size: 1rem;
+  max-width: 560px;
+  font-size: 0.92rem;
   text-align: left;
+  line-height: 2;
 }
 
 .greeting__body p {
-  margin: 0.2rem 0;
+  margin: 0 0 1rem;
+}
+
+.greeting__body strong {
+  color: var(--red);
+  font-weight: 700;
 }
 
 .greeting__sign {
@@ -515,39 +522,6 @@ dd {
   color: var(--red);
 }
 
-.after-party__lead {
-  color: var(--red);
-  font-family: "DynaPuff", sans-serif;
-  font-size: 1.55rem !important;
-  line-height: 1.1;
-  transform: rotate(-3deg);
-}
-
-.after-party__time {
-  margin-top: 1rem !important;
-}
-
-.pizza-doodle {
-  color: var(--red);
-  font-family: "DynaPuff", sans-serif;
-  font-size: 1.3rem;
-  line-height: 1;
-  transform: rotate(7deg);
-}
-
-.pizza-doodle b {
-  color: var(--blue);
-  font-weight: 500;
-}
-
-.pizza-doodle span {
-  display: block;
-  color: var(--blue);
-  font-family: sans-serif;
-  font-size: 4rem;
-  transform: rotate(-24deg);
-}
-
 .concept {
   grid-template-columns: minmax(270px, 290px) minmax(200px, 260px) minmax(0, 1fr);
   align-items: center;
@@ -675,21 +649,21 @@ dd {
   }
 
   .greeting {
-    min-height: 330px;
+    min-height: 0;
   }
 
   .greeting__body {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
+    line-height: 1.9;
   }
 
   .doodle--sparkles {
     right: 8%;
-    top: 57%;
+    top: 18rem;
   }
 
   .calendar-doodle,
-  .venue-doodle,
-  .pizza-doodle {
+  .venue-doodle {
     justify-self: end;
     margin-top: -1rem;
   }
@@ -741,8 +715,7 @@ dd {
   }
 
   .calendar-doodle,
-  .venue-doodle,
-  .pizza-doodle {
+  .venue-doodle {
     justify-self: end;
     margin-top: -0.5rem;
   }
