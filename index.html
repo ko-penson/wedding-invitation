@@ -1,146 +1,150 @@
-<!doctype html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#fffbdc" />
-    <meta name="description" content="KOTA & CHIHARU wedding invitation" />
-    <title>KOTA & CHIHARU — Wedding Invitation</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Yomogi&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <main>
-      <!-- Hero: replace assets/hero.mp4 with your silent slideshow video. -->
-      <section class="hero" id="top" aria-label="ウェルカムページ">
-        <video class="hero__video" autoplay muted loop playsinline poster="assets/hero-poster.jpg" aria-hidden="true">
-          <source src="assets/hero.mp4" type="video/mp4" />
-        </video>
-        <div class="hero__wash"></div>
-        <div class="hero__grain"></div>
+:root {
+  --cream: #fffbdc;
+  --cream-deep: #fff6c8;
+  --red: #ef3e23;
+  --blue: #2869b5;
+  --ink: #1d5da7;
+  --line: rgba(40, 105, 181, 0.62);
+  --paper-width: 980px;
+}
 
-        <div class="hero__topline">
-          <p>KOTA<br />and<br />CHIHARU</p>
-          <p class="hero__topline-right">WEDDING<br />INVITATION<br />2027</p>
-        </div>
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--blue);
+  background: #f7eeb9;
+  font-family: "Yomogi", "Hiragino Maru Gothic ProN", "Yu Gothic", sans-serif;
+  line-height: 1.85;
+}
+a { color: inherit; }
 
-        <div class="hero__content">
-          <p class="eyebrow">AMPLIFY　受け取ること。伝えること。</p>
-          <h1>OUR<br /><span>WEDDING</span></h1>
-          <p class="hero__names">KOTA <i>&amp;</i> CHIHARU</p>
-          <p class="hero__date">2027.01.30 SAT</p>
-          <p class="hero__place">ACE HOTEL KYOTO</p>
-        </div>
+.hero {
+  min-height: 100svh;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  color: var(--red);
+  background: radial-gradient(circle at 50% 20%, #fffde9, #f7eeba 80%);
+  isolation: isolate;
+}
+.hero__video, .hero__wash, .hero__grain {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.hero__video { object-fit: cover; z-index: -3; opacity: .42; mix-blend-mode: multiply; }
+.hero__wash { z-index: -2; background: rgba(255, 251, 220, .64); }
+.hero__grain { z-index: -1; opacity: .2; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E"); }
+.hero__topline { position: absolute; top: 2rem; left: 3.5vw; right: 3.5vw; display: flex; justify-content: space-between; color: var(--blue); font-family: "DynaPuff", sans-serif; font-size: 1.12rem; line-height: 1.15; letter-spacing: .08em; }
+.hero__topline p { margin: 0; }
+.hero__topline-right { text-align: right; }
+.hero__content { text-align: center; padding: 4rem 1rem 2rem; transform: rotate(-1deg); }
+.eyebrow { margin: 0 0 .9rem; font-size: clamp(.72rem, 1.8vw, 1rem); letter-spacing: .22em; }
+h1 { margin: 0; font-family: "DynaPuff", sans-serif; font-size: clamp(5.5rem, 15vw, 11rem); font-weight: 700; line-height: .72; letter-spacing: -.05em; }
+h1 span { display: inline-block; transform: rotate(1deg); }
+.hero__names { margin: 2rem 0 .1rem; font-family: "DynaPuff", sans-serif; font-size: clamp(1.6rem, 4vw, 2.8rem); letter-spacing: .1em; }
+.hero__names i { font-style: normal; font-size: .75em; padding: 0 .4em; }
+.hero__date, .hero__place { margin: .25rem 0; font-size: .95rem; letter-spacing: .14em; }
+.hero__place { font-size: .72rem; }
+.scroll-cue { position: absolute; bottom: 1.5rem; left: 50%; display: grid; gap: .3rem; justify-items: center; text-decoration: none; color: var(--blue); font-family: "DynaPuff", sans-serif; font-size: .85rem; letter-spacing: .15em; transform: translateX(-50%); }
+.scroll-cue i { display: block; width: 1px; height: 42px; background: var(--blue); }
 
-        <a class="scroll-cue" href="#greeting"><span>SCROLL</span><i></i></a>
-      </section>
+.paper { max-width: var(--paper-width); margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 4.4rem); background: var(--cream); box-shadow: 0 0 60px rgba(104, 86, 31, .12); }
+.section { position: relative; display: grid; grid-template-columns: minmax(270px, 290px) minmax(0, 1fr); gap: clamp(1.2rem, 3vw, 1.8rem); padding: 4.7rem 0 4rem; border-bottom: 2px solid var(--line); }
+.section::after { content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 2px; background: var(--line); transform: rotate(-.4deg); opacity: .7; }
+.section__heading { color: var(--red); }
+.section__title { margin: 0; font-family: "DynaPuff", sans-serif; font-size: clamp(2.8rem, 6vw, 4rem); font-weight: 700; line-height: .78; }
+.section__sub { margin: .3rem 0 0; font-size: .9rem; font-weight: 700; }
+.greeting { min-height: 300px; align-items: center; }
+.greeting__body { font-size: 1rem; text-align: left; }
+.greeting__body p { margin: .2rem 0; }
+.greeting__sign { margin-top: 1.2rem !important; color: var(--red); font-family: "DynaPuff", sans-serif; font-size: 1.7rem; }
+.doodle--sparkles { position: absolute; right: 10%; top: 32%; font-size: 2rem; line-height: 1.1; transform: rotate(13deg); }
+.split { grid-template-columns: minmax(270px, 290px) minmax(0, 1fr) minmax(140px, 190px); align-items: center; }
+.info-block h2 { margin: 0 0 .1rem; font-size: 1.2rem; }
+.info-block p { margin: .1rem 0; font-size: .91rem; }
+.big-date { margin: 0 0 .5rem; font-family: "DynaPuff", sans-serif; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: .04em; }
+.big-date small { font-family: "Yomogi", sans-serif; font-size: .52em; letter-spacing: .1em; }
+dl { margin: 0; max-width: 400px; }
+dl div { display: flex; gap: 1.2rem; align-items: baseline; }
+dt { min-width: 5em; font-size: .88rem; }
+dd { margin: 0; font-family: "DynaPuff", sans-serif; font-size: 1.8rem; letter-spacing: .06em; }
+.calendar-doodle { justify-self: center; width: 120px; padding: 1rem .7rem .8rem; border: 2px solid var(--blue); color: var(--blue); text-align: center; transform: rotate(4deg); box-shadow: 7px 7px 0 rgba(40, 105, 181, .16); }
+.calendar-doodle span { display: block; font-family: "DynaPuff", sans-serif; font-size: 1.5rem; line-height: 1; }
+.calendar-doodle strong { display: block; font-family: "DynaPuff", sans-serif; font-size: 3.2rem; line-height: 1.1; }
+.calendar-doodle i { display: block; color: var(--red); font-size: 1.2rem; font-style: normal; }
+.outline-button { display: inline-flex; align-items: center; gap: .55rem; margin-top: 1.2rem; padding: .55rem 1rem; color: var(--blue); border: 2px solid var(--blue); border-radius: 13px; text-decoration: none; font-weight: 700; line-height: 1.2; transition: background .2s, transform .2s; }
+.outline-button:hover { background: rgba(40, 105, 181, .09); transform: translateY(-2px) rotate(-.5deg); }
+.outline-button b { font-family: sans-serif; font-size: 1.3rem; font-weight: 400; }
+.pin, .button-icon { font-family: sans-serif; font-size: 1.4rem; }
+.access { margin-top: 1.4rem !important; font-weight: 700; }
+.access span { font-weight: 400; font-size: .83rem; }
+.venue-official { display: inline-block; margin-top: .7rem; color: var(--red); font-size: .82rem; font-weight: 700; text-underline-offset: .25em; }
+.venue-doodle { align-self: center; display: flex; align-items: center; gap: .6rem; color: var(--red); font-family: "DynaPuff", sans-serif; font-size: 1.1rem; line-height: 1.05; transform: rotate(5deg); }
+.building { position: relative; width: 120px; height: 78px; border: 3px solid var(--blue); border-top: 0; border-radius: 2px 2px 12px 12px; }
+.building::before { content: ""; position: absolute; left: -12px; right: -12px; top: -18px; height: 22px; border: 3px solid var(--blue); border-bottom: 0; border-radius: 50% 50% 0 0; }
+.building::after { content: ""; position: absolute; left: 50%; bottom: 0; width: 23px; height: 42px; border: 3px solid var(--blue); border-bottom: 0; transform: translateX(-50%); border-radius: 20px 20px 0 0; }
+.building i { position: absolute; top: 19px; width: 12px; height: 15px; border: 2px solid var(--blue); }
+.building i:nth-child(1) { left: 15px; }.building i:nth-child(2) { right: 15px; }.building i:nth-child(3) { left: 52px; top: 2px; width: 13px; height: 13px; border-radius: 50%; }
+.action-row { grid-template-columns: minmax(270px, 290px) minmax(0, 1fr) minmax(220px, 250px); align-items: center; }
+.action-row__copy p, .message-card { margin: 0; font-size: .92rem; }
+.action-row__copy strong { color: var(--red); }
+.outline-button--wide { min-width: 250px; justify-content: center; padding: .85rem 1.2rem; font-size: 1rem; }
+.message-card { display: flex; align-items: center; gap: 1.2rem; font-family: "DynaPuff", sans-serif; font-size: 1.55rem; line-height: 1.1; transform: rotate(-4deg); }
+.message-card::before { content: ""; display: block; width: 80px; height: 100px; border: 3px solid var(--blue); box-shadow: 7px 6px 0 var(--cream), 9px 8px 0 var(--blue); }
+.message-card span { margin-left: -4rem; z-index: 1; }
+.message-card__flower { color: var(--red); font-family: sans-serif; font-size: 2rem; }
+.message__copy { font-size: .9rem; }.message__copy p { margin: .35rem 0; }.message__intro { font-size: 1rem; font-weight: 700; }.message__profile { color: var(--blue); }.message__profile strong { color: var(--red); }
+.after-party__lead { color: var(--red); font-family: "DynaPuff", sans-serif; font-size: 1.55rem !important; line-height: 1.1; transform: rotate(-3deg); }
+.after-party__time { margin-top: 1rem !important; }
+.pizza-doodle { color: var(--red); font-family: "DynaPuff", sans-serif; font-size: 1.3rem; line-height: 1; transform: rotate(7deg); }
+.pizza-doodle b { color: var(--blue); font-weight: 500; }.pizza-doodle span { display: block; color: var(--blue); font-family: sans-serif; font-size: 4rem; transform: rotate(-24deg); }
+.concept { grid-template-columns: minmax(270px, 290px) minmax(200px, 260px) minmax(0, 1fr); align-items: center; }
+.concept__art { display: flex; align-items: center; justify-content: center; gap: .6rem; min-height: 120px; color: var(--blue); border: 3px solid var(--blue); transform: rotate(-7deg); font-family: "DynaPuff", sans-serif; }
+.concept__art span { font-size: 4rem; }.concept__art b { font-size: 1.2rem; line-height: .9; }
+.concept__copy { font-size: .86rem; }.concept__copy p { margin: .65rem 0; }.quote { margin-top: 0 !important; font-size: 1.05rem; font-weight: 700; }
+.footer { position: relative; min-height: 250px; display: grid; place-items: center; padding: 4rem 0 3rem; color: var(--blue); text-align: center; }
+.footer__thanks { margin: 0; font-family: "DynaPuff", sans-serif; font-size: 3rem; font-style: italic; transform: rotate(-4deg); }
+.footer__names { margin: 0; letter-spacing: .15em; }.footer__small { position: absolute; right: 0; bottom: 2.5rem; margin: 0; font-family: "DynaPuff", sans-serif; line-height: 1.1; }
 
-      <div class="paper">
-        <section class="section greeting" id="greeting">
-          <div class="section__heading">
-            <p class="section__title">GREETING</p>
-            <p class="section__sub">ごあいさつ</p>
-          </div>
-          <div class="greeting__body">
-            <p>このたび 私たちは結婚することになりました</p>
-            <p>受け取ること。伝えること。</p>
-            <p>二人の間にある気持ちを ちゃんとそのままに。</p>
-            <p>大切な皆さまと一緒に、心が通う一日を過ごせたら嬉しいです</p>
-            <p class="greeting__sign">KOTA &amp; CHIHARU</p>
-          </div>
-          <div class="doodle doodle--sparkles" aria-hidden="true">✦　✧<br />　♡</div>
-        </section>
+@media (max-width: 760px) {
+  .hero__topline { top: 1.25rem; left: 1.3rem; right: 1.3rem; font-size: .95rem; }
+  .hero__content { padding-top: 3rem; }.eyebrow { letter-spacing: .1em; font-size: .66rem; }
+  .hero__date { font-size: .8rem; }.hero__place { font-size: .6rem; }
+  .paper { padding: 0 1.25rem; box-shadow: none; }
+  .section, .split, .action-row, .concept { display: grid; grid-template-columns: 1fr; gap: 1rem; padding: 3.3rem 0 2.7rem; }
+  .section__heading { display: flex; align-items: baseline; gap: .7rem; }.section__title { font-size: 3rem; }.section__sub { margin: 0; }
+  .greeting { min-height: 330px; }.greeting__body { font-size: .9rem; }.doodle--sparkles { right: 8%; top: 57%; }
+  .calendar-doodle, .venue-doodle, .pizza-doodle { justify-self: end; margin-top: -1rem; }.venue-doodle { margin-top: .5rem; }
+  .action-row .outline-button, .outline-button--wide { justify-self: start; min-width: 0; width: 100%; }
+  .message-card { justify-self: center; margin: .6rem 0 1rem; }.concept__art { max-width: 220px; margin: .5rem auto; }
+  .footer__small { right: .3rem; bottom: 1.7rem; font-size: .75rem; }
+}
 
-        <section class="section split" id="date">
-          <div class="section__heading">
-            <p class="section__title">DATE</p>
-            <p class="section__sub">日時</p>
-          </div>
-          <div class="info-block date-block">
-            <p class="big-date">2027.01.30 <small>SAT</small></p>
-            <dl>
-              <div><dt>開宴</dt><dd>13:00</dd></div>
-              <div><dt>おひらき</dt><dd>16:30</dd></div>
-            </dl>
-          </div>
-          <div class="calendar-doodle" aria-hidden="true">
-            <span>JAN</span>
-            <strong>30</strong>
-            <i>♡</i>
-          </div>
-        </section>
+@media (min-width: 761px) and (max-width: 920px) {
+  .section, .split, .action-row, .concept { grid-template-columns: minmax(0, 1fr); }
+  .section__heading { display: flex; align-items: baseline; gap: .7rem; }
+  .section__sub { margin: 0; }
+  .calendar-doodle, .venue-doodle, .pizza-doodle { justify-self: end; margin-top: -.5rem; }
+  .action-row .outline-button { justify-self: start; }
+  .concept__art { max-width: 260px; }
+}
 
-        <section class="section split venue" id="venue">
-          <div class="section__heading">
-            <p class="section__title">VENUE</p>
-            <p class="section__sub">会場</p>
-          </div>
-          <div class="info-block">
-            <h2>ACE HOTEL KYOTO</h2>
-            <p>〒604-8185 京都府京都市中京区車屋町245-2</p>
-            <a class="outline-button" href="https://maps.google.com/?q=Ace+Hotel+Kyoto+245-2+Kurumayacho+Kyoto" target="_blank" rel="noreferrer">
-              <span class="pin">⌖</span> Google Map で見る <b>→</b>
-            </a>
-            <a class="venue-official" href="https://jp.acehotel.com/kyoto/private-spaces/weddings/" target="_blank" rel="noreferrer">ACE HOTEL WEDDING の詳細を見る ↗</a>
-            <p class="access">地下鉄「烏丸御池駅」から徒歩約1分<br /><span>※アクセスはご来場前に公式サイトでご確認ください</span></p>
-          </div>
-          <div class="venue-doodle" aria-hidden="true">
-            <span>nice<br />food<br />nice<br />people</span>
-            <div class="building"><i></i><i></i><i></i></div>
-          </div>
-        </section>
+@media (min-width: 921px) and (max-width: 1080px) {
+  .section, .split, .action-row, .concept { grid-template-columns: minmax(0, 1fr); }
+  .section__heading { display: flex; align-items: baseline; gap: .7rem; }
+  .section__sub { margin: 0; }
+  .calendar-doodle, .venue-doodle { justify-self: end; margin-top: -.5rem; }
+  .action-row .outline-button { justify-self: start; }
+  .concept__art { max-width: 260px; }
+}
 
-        <section class="section concept" id="concept">
-          <div class="section__heading">
-            <p class="section__title">AMPLIFY</p>
-            <p class="section__sub">増幅</p>
-          </div>
-          <div class="concept__art" aria-hidden="true"><span>↔</span><b>RECEIVE<br />&amp;<br />TELL</b></div>
-          <div class="concept__copy">
-            <p class="quote">“ ちゃんと伝える。ちゃんと受け取る。 ”</p>
-            <p>素直な気持ちのキャッチボールは、二人の中の熱を高めていく。<br />嬉しい、愛おしい、わかってほしい。そんな気持ちを受け取り合うことで、<br />これからも縁を大切にし、相手も動きたくなる力へと増幅していく。</p>
-            <p>この一日を、未来の「こうありたい」を叶えるためのはじまりに。</p>
-          </div>
-        </section>
-
-        <section class="section action-row message" id="message">
-          <div class="section__heading">
-            <p class="section__title">MESSAGE</p>
-            <p class="section__sub">メッセージ</p>
-          </div>
-          <div class="message__copy">
-            <p class="message__intro">KOTAとCHIHARUです。<br />これからも、好きな人たちと好きなことでつながる時間を大切にしていきます。</p>
-            <p class="message__profile"><strong>KOTA</strong>　日々の発見と、楽しい時間が好き。<br /><strong>CHIHARU</strong>　人と人とのつながりを大切にしています。</p>
-            <p>ふたりへのメッセージを、ぜひ聞かせてください。</p>
-          </div>
-          <!-- メッセージ用Googleフォームを作成したら、下のURLを差し替える -->
-          <a class="outline-button" href="https://forms.gle/REPLACE_MESSAGE_FORM_URL" target="_blank" rel="noreferrer">
-            <span class="button-icon">☻</span> メッセージを送る <b>→</b>
-          </a>
-        </section>
-
-        <section class="section action-row" id="rsvp">
-          <div class="section__heading">
-            <p class="section__title">RSVP</p>
-            <p class="section__sub">ご出欠のご回答</p>
-          </div>
-          <div class="action-row__copy">
-            <p>お手数ですが<br /><strong>2026年11月30日（月）</strong>までに<br />ご回答をお願いいたします。</p>
-          </div>
-          <a class="outline-button outline-button--wide" href="https://forms.gle/VxW7f5oydHGA6swQ8" target="_blank" rel="noreferrer">
-            <span class="button-icon">✎</span> 出欠回答フォームへ <b>→</b>
-          </a>
-        </section>
-
-        <footer class="footer">
-          <p class="footer__thanks">Thank you!</p>
-          <p class="footer__names">KOTA &amp; CHIHARU</p>
-          <p class="footer__small">LIFE IS BETTER<br />TOGETHER.</p>
-        </footer>
-      </div>
-    </main>
-    <script src="script.js"></script>
-  </body>
-</html>
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero__video { display: none; }
+  .outline-button { transition: none; }
+}
