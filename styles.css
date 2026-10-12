@@ -550,3 +550,12 @@ dd,
   html.js .section > * { opacity: 1; translate: none; transition: none; }
   .hero__content h1, .hero__names, .section__title, .footer__thanks { animation: none !important; }
 }
+
+.hero__content h1 {
+  opacity: 1;
+  transition: opacity .6s ease;
+}
+
+.hero.video-playing .hero__content h1 {
+  opacity: .7;
+}
