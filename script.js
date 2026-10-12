@@ -13,7 +13,7 @@ if (heroVideo) {
     window.setTimeout(() => {
       heroVideo.play().catch(() => {});
     }, 1200);
-  }, 3000);
+  }, 1500);
 
   heroVideo.addEventListener('error', () => {
     heroVideo.style.display = 'none';
