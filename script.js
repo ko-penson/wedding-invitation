@@ -4,7 +4,9 @@ const heroVideo = document.querySelector('.hero__video');
 const hero = document.querySelector('.hero');
 
 if (heroVideo) {
-  const revealVideo = () => hero?.classList.add('video-started');
+  const revealVideo = () => {
+    window.setTimeout(() => hero?.classList.add('video-started'), 2000);
+  };
 
   heroVideo.addEventListener('playing', revealVideo, { once: true });
   heroVideo.addEventListener('error', () => {
