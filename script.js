@@ -6,10 +6,14 @@ const hero = document.querySelector('.hero');
 if (heroVideo) {
   heroVideo.pause();
 
+  heroVideo.addEventListener('playing', () => {
+    hero?.classList.add('video-playing');
+  }, { once: true });
+
   window.setTimeout(() => {
     hero?.classList.add('video-started');
 
-    // Green overlay fades out for 0.5 seconds before the video starts.
+    // 緑が0.5秒で透明になったあとに動画を開始
     window.setTimeout(() => {
       heroVideo.play().catch(() => {});
     }, 500);
@@ -21,6 +25,7 @@ if (heroVideo) {
 }
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
 if (prefersReducedMotion.matches && heroVideo) {
   heroVideo.pause();
 }
