@@ -158,6 +158,11 @@ h1 {
   font-weight: 700;
   line-height: .72;
   letter-spacing: -.05em;
+  transition: opacity .6s ease;
+}
+
+.hero.video-playing .hero__content h1 {
+  opacity: .7;
 }
 
 h1 span { display: inline-block; transform: rotate(1deg); }
@@ -551,11 +556,94 @@ dd,
   .hero__content h1, .hero__names, .section__title, .footer__thanks { animation: none !important; }
 }
 
-.hero__content h1 {
-  opacity: 1;
-  transition: opacity .6s ease;
-}
+/* Mobile layout refinements */
+@media (max-width: 760px) {
+  .hero {
+    min-height: 100svh;
+  }
 
-.hero.video-playing .hero__content h1 {
-  opacity: .7;
+  .hero__content {
+    width: 100%;
+    padding: 0 1rem 2.5rem;
+  }
+
+  .hero__content h1 {
+    font-size: clamp(4.2rem, 20vw, 7.2rem);
+    line-height: .76;
+  }
+
+  .hero__names {
+    margin-top: 1.5rem;
+    font-size: clamp(1.25rem, 6vw, 2.2rem);
+    letter-spacing: .06em;
+  }
+
+  .scroll-cue {
+    bottom: 1rem;
+  }
+
+  .paper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .section,
+  .split,
+  .action-row,
+  .concept {
+    gap: 1.25rem;
+    padding-top: 3rem;
+    padding-bottom: 2.7rem;
+  }
+
+  .section__title {
+    font-size: clamp(2.6rem, 14vw, 4rem);
+  }
+
+  .greeting__body {
+    font-size: .86rem;
+    line-height: 1.9;
+  }
+
+  .greeting__sign {
+    font-size: 1.15rem;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+
+  .big-date {
+    font-size: clamp(2.3rem, 11vw, 4rem);
+    white-space: nowrap;
+  }
+
+  .big-date small {
+    font-size: .48em;
+  }
+
+  dl div {
+    gap: .8rem;
+  }
+
+  dd {
+    font-size: 1.65rem;
+  }
+
+  .arrival-note {
+    font-size: .82rem !important;
+  }
+
+  .info-block h2 {
+    font-size: 1.05rem;
+  }
+
+  .venue-doodle {
+    transform: scale(.9) rotate(5deg);
+    transform-origin: right center;
+  }
+
+  .concept__copy,
+  .message__copy,
+  .action-row__copy {
+    font-size: .88rem;
+  }
 }
