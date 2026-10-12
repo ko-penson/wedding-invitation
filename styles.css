@@ -305,14 +305,15 @@ h1 span { display: inline-block; transform: rotate(1deg); }
   margin: 0 0 .5rem;
   color: var(--red);
   font-family: "DynaPuff", sans-serif;
-  font-size: clamp(3rem, 7vw, 5rem);
+  font-size: clamp(3.2rem, 8vw, 5.5rem);
+  line-height: 1.05;
   letter-spacing: .04em;
 }
 
 .big-date small {
   color: var(--sage);
   font-family: "Yomogi", sans-serif;
-  font-size: .52em;
+  font-size: .55em;
   letter-spacing: .1em;
 }
 
