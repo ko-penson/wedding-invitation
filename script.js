@@ -9,7 +9,7 @@ if (heroVideo) {
   window.setTimeout(() => {
     hero?.classList.add('video-started');
 
-    // Green overlay fades out for 1.2 seconds before the video starts.
+    // 緑が透明になったあとに動画を開始
     window.setTimeout(() => {
       heroVideo.play().catch(() => {});
     }, 1200);
@@ -18,12 +18,10 @@ if (heroVideo) {
   heroVideo.addEventListener('error', () => {
     heroVideo.style.display = 'none';
   });
-
-  // Some browsers wait for a user gesture even when a video is muted.
-  heroVideo.play().catch(() => {});
 }
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
 if (prefersReducedMotion.matches && heroVideo) {
   heroVideo.pause();
 }
