@@ -116,14 +116,20 @@ html.js .section.is-visible > * {
 .hero__video {
   object-fit: cover;
   z-index: -3;
-  opacity: .86;
-  filter: grayscale(1) sepia(.12) hue-rotate(65deg) saturate(.85) brightness(.9);
-  mix-blend-mode: screen;
+  opacity: 1;
+  filter: brightness(.92) saturate(1.05);
+  mix-blend-mode: normal;
 }
 
 .hero__wash {
   z-index: -2;
-  background: rgba(3, 34, 17, .18);
+  background: rgba(3, 34, 17, .78);
+  opacity: 1;
+  transition: opacity 1.2s ease;
+}
+
+.hero.video-started .hero__wash {
+  opacity: 0;
 }
 
 .hero__grain {
