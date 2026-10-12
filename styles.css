@@ -26,14 +26,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   color: var(--blue);
-  background:
-    repeating-linear-gradient(
-      90deg,
-      #0a3820 0 76px,
-      #a5b9af 76px 148px,
-      #0a3820 148px 226px,
-      #b4c5bc 226px 302px
-    );
+  background: var(--forest);
   background-attachment: fixed;
   font-family: "Ampersand", "Yomogi", "Hiragino Maru Gothic ProN", "Yu Gothic", sans-serif;
   line-height: 1.85;
@@ -233,9 +226,7 @@ h1 span { display: inline-block; transform: rotate(1deg); }
   max-width: var(--paper-width);
   margin: 0 auto;
   padding: 0 clamp(1.25rem, 5vw, 4.4rem);
-  background:
-    linear-gradient(rgba(6, 56, 25, .96), rgba(6, 56, 25, .96)),
-    repeating-linear-gradient(90deg, transparent 0 40px, rgba(167, 191, 176, .05) 40px 42px);
+  background: var(--forest);
   box-shadow: 0 0 60px rgba(0, 22, 10, .4);
 }
 
