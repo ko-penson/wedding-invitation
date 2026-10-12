@@ -125,7 +125,7 @@ html.js .section.is-visible > * {
   z-index: -2;
   background: rgba(3, 34, 17, .92);
   opacity: 1;
-  transition: opacity 1.2s ease;
+  transition: opacity .5s ease;
 }
 
 .hero.video-started .hero__wash {
