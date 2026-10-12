@@ -115,6 +115,9 @@ html.js .section.is-visible > * {
 
 .hero__video {
   object-fit: cover;
+  object-position: center center;
+  min-width: 100%;
+  min-height: 100%;
   z-index: -3;
   opacity: 1;
   filter: brightness(.92) saturate(1.05);
@@ -525,6 +528,13 @@ dd,
 }
 
 @media (max-width: 760px) {
+  .hero__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+
   .hero__topline { top: 1.25rem; left: 1.3rem; right: 1.3rem; font-size: .95rem; }
   .hero__content { padding-top: 3rem; }
   .eyebrow { letter-spacing: .1em; font-size: .66rem; }
