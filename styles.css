@@ -305,7 +305,7 @@ h1 span { display: inline-block; transform: rotate(1deg); }
   margin: 0 0 .5rem;
   color: var(--red);
   font-family: "DynaPuff", sans-serif;
-  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-size: clamp(3rem, 7vw, 5rem);
   letter-spacing: .04em;
 }
 
