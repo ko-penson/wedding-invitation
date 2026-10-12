@@ -6,16 +6,31 @@
     <meta name="theme-color" content="#063819" />
     <meta name="description" content="KOTA & CHIHARU wedding invitation" />
     <title>KOTA & CHIHARU — Wedding Invitation</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&family=Yomogi&display=swap" rel="stylesheet" />
+    <link rel="preload" href="assets/ampersand.ttf" as="font" type="font/ttf" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&family=Yomogi&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
     <main>
       <section class="hero" id="top" aria-label="ウェルカムページ">
-        <video class="hero__video" autoplay muted loop playsinline poster="assets/hero-poster.jpg" aria-hidden="true">
+
+        <!-- トップ動画 -->
+        <video
+          class="hero__video"
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="assets/hero-poster.jpg"
+          aria-hidden="true"
+        >
           <source src="assets/hero.mp4" type="video/mp4" />
         </video>
 
@@ -23,14 +38,29 @@
         <div class="hero__grain"></div>
 
         <div class="hero__topline">
-          <p>KOTA<br />and<br />CHIHARU</p>
-          <p class="hero__topline-right">WEDDING<br />INVITATION<br />2027</p>
+          <p>
+            KOTA<br />
+            and<br />
+            CHIHARU
+          </p>
+
+          <p class="hero__topline-right">
+            WEDDING<br />
+            INVITATION<br />
+            2027
+          </p>
         </div>
 
         <div class="hero__content">
-          <p class="eyebrow">AMPLIFY　受け取ること　伝えること</p>
-          <h1>OUR<br /><span>WEDDING</span></h1>
-          <p class="hero__names">KOTA <i>&amp;</i> CHIHARU</p>
+          <h1>
+            OUR<br />
+            <span>WEDDING</span>
+          </h1>
+
+          <p class="hero__names">
+            KOTA <i>&amp;</i> CHIHARU
+          </p>
+
           <p class="hero__date">2027.01.30 SAT</p>
           <p class="hero__place">ACE HOTEL KYOTO</p>
         </div>
@@ -42,39 +72,99 @@
       </section>
 
       <div class="paper">
+
         <section class="section greeting" id="greeting">
           <div class="section__heading">
             <p class="section__title">GREETING</p>
-            <p class="section__sub">ごあいさつ</p>
           </div>
 
           <div class="greeting__body">
-            <p>師走の風が身にしみる頃となりました<br />皆さまいかがお過ごしでしょうか</p>
-            <p>本日は　私たち2人のたいせつな皆さまへ<br />たいせつなご案内をお届けします</p>
-            <p>少し長くなりますが<br />私たちの今の気持ちを読んでいただけたら嬉しいです</p>
-            <p>大阪と埼玉<br />それぞれの土地で生まれ<br />それぞれの人生を歩んできた私たちは<br /><strong>2027年1月30日に夫婦となり</strong><br />これからの人生を共に歩んでいくことを決めました</p>
-            <p>そのご報告と<br />これから夫婦として歩んでいく決意<br />そして　これまで支えてくださった皆さまへ<br />感謝をお伝えする場として<br />結婚式を挙げることにしました</p>
-            <p>それぞれの人生を応援し<br />支えてきてくださったたいせつな皆さまに<br />私たちの新しい門出を見守っていただけたら嬉しいです</p>
-            <p>そしてこの日が<br />これまでのことや　これからのことを語り合い<br />私たちから皆さまへ<br />皆さまから私たちへ<br />気持ちを交わせるような時間になればと思っています</p>
-            <p>これから先も<br />夫婦ともども変わらずお付き合いいただけたら嬉しいです</p>
-            <p>一人ひとりの顔を思い浮かべながら<br />心を込めて準備してまいります</p>
-            <p>ぜひご出席いただきますよう<br />よろしくお願いします</p>
-            <p class="greeting__sign">KOTA &amp; CHIHARU</p>
-          </div>
+            <p>
+              師走の風が身にしみる頃となりました<br />
+              皆さまいかがお過ごしでしょうか
+            </p>
 
-          <div class="doodle doodle--sparkles" aria-hidden="true">
-            ✦　✧<br />　♡
+            <p>
+              本日は　私たち2人のたいせつな皆さまへ<br />
+              お伝えしたいことがあります
+            </p>
+
+            <p>
+              少し長くなりますが<br />
+              私たちの今の気持ちを読んでいただけたら嬉しいです
+            </p>
+
+            <p>
+              大阪と埼玉<br />
+              それぞれの土地で生まれ<br />
+              それぞれの人生を歩んできた私たちは<br />
+              <strong class="date-emphasis">2027年1月30日に夫婦となり</strong><br />
+              これからの人生を共に歩んでいくことを決めました
+            </p>
+
+            <p>
+              そのご報告と<br />
+              これから夫婦として歩んでいく決意<br />
+              そして　これまで支えてくださった皆さまへ<br />
+              感謝をお伝えする場として<br />
+              結婚式を挙げることにしました
+            </p>
+
+            <p>
+              それぞれの人生を応援し<br />
+              支えてきてくださったたいせつな皆さまに<br />
+              私たちの新しい門出を見守っていただけたら嬉しいです
+            </p>
+
+            <p>
+              そしてこの日が<br />
+              これまでのことや　これからのことを語り合い<br />
+              私たちから皆さまへ<br />
+              皆さまから私たちへ<br />
+              気持ちを交わせるような時間になればと思っています
+            </p>
+
+            <p>
+              これから先も<br />
+              夫婦ともども変わらずお付き合いいただけたら嬉しいです
+            </p>
+
+            <p>
+              一人ひとりの顔を思い浮かべながら<br />
+              心を込めて準備してまいります
+            </p>
+
+            <p>
+              ぜひご出席いただきますよう<br />
+              よろしくお願いします
+            </p>
+
+            <p class="greeting__sign">
+              南 皓太　　　　船澤 千春
+            </p>
           </div>
         </section>
 
         <section class="section split" id="date">
           <div class="section__heading">
             <p class="section__title">DATE</p>
-            <p class="section__sub">日時</p>
           </div>
 
           <div class="info-block date-block">
-            <p class="big-date">2027.01.30 <small>SAT</small></p>
+            <p class="big-date">
+              2027.01.30 <small>SAT</small>
+            </p>
+
+            <dl>
+              <div>
+                <dt>受付.</dt>
+                <dd>12:45</dd>
+              </div>
+            </dl>
+
+            <p class="arrival-note">
+              12:45までにはお越しください
+            </p>
 
             <dl>
               <div>
@@ -83,15 +173,10 @@
               </div>
 
               <div>
-                <dt>おひらき</dt>
+                <dt>おひらき.</dt>
                 <dd>16:30</dd>
               </div>
             </dl>
-
-            <p class="arrival-note">
-              受付は遅れる方がいるかもしれないため<br />
-              12:45までにはお越しください
-            </p>
           </div>
 
           <div class="calendar-doodle" aria-hidden="true">
@@ -104,12 +189,14 @@
         <section class="section split venue" id="venue">
           <div class="section__heading">
             <p class="section__title">VENUE</p>
-            <p class="section__sub">会場</p>
           </div>
 
           <div class="info-block">
             <h2>ACE HOTEL KYOTO</h2>
-            <p>〒604-8185 京都府京都市中京区車屋町245-2</p>
+
+            <p>
+              〒604-8185 京都府京都市中京区車屋町245-2
+            </p>
 
             <a
               class="outline-button"
@@ -124,38 +211,52 @@
 
             <a
               class="venue-official"
-              href="https://jp.acehotel.com/kyoto/private-spaces/weddings/"
+              href="https://jp.acehotel.com/kyoto/access/"
               target="_blank"
               rel="noreferrer"
             >
-              ACE HOTEL WEDDING の詳細を見る ↗
+              ACE HOTELへのアクセスはこちら↗︎
             </a>
 
             <p class="access">
-              地下鉄「烏丸御池駅」から徒歩約1分<br />
-              <span>※アクセスはご来場前に公式サイトでご確認ください</span>
+              地下鉄「烏丸御池駅」直結
             </p>
           </div>
 
           <div class="venue-doodle" aria-hidden="true">
-            <span>nice<br />food<br />nice<br />people</span>
-            <div class="building"><i></i><i></i><i></i></div>
+            <span>
+              nice<br />
+              food<br />
+              nice<br />
+              people
+            </span>
+
+            <div class="building">
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
           </div>
         </section>
 
         <section class="section concept" id="concept">
           <div class="section__heading">
-            <p class="section__title">AMPLIFY</p>
-            <p class="section__sub">増幅</p>
+            <p class="section__title">CONSEPT</p>
           </div>
 
           <div class="concept__art" aria-hidden="true">
             <span>↔</span>
-            <b>RECEIVE<br />&amp;<br />TELL</b>
+            <b>
+              RECEIVE<br />
+              &amp;<br />
+              TELL
+            </b>
           </div>
 
           <div class="concept__copy">
-            <p class="quote">“ ちゃんと伝える　ちゃんと受け取る ”</p>
+            <p class="quote">
+              “ ちゃんと伝える　ちゃんと受け取る ”
+            </p>
 
             <p>
               素直な気持ちのキャッチボールは二人の中の熱を高めていく<br />
@@ -172,7 +273,6 @@
         <section class="section action-row message" id="message">
           <div class="section__heading">
             <p class="section__title">MESSAGE</p>
-            <p class="section__sub">メッセージ</p>
           </div>
 
           <div class="message__copy">
@@ -182,11 +282,15 @@
             </p>
 
             <p class="message__profile">
-              <strong>KOTA</strong>　日々の発見と楽しい時間が好き<br />
-              <strong>CHIHARU</strong>　人と人とのつながりをたいせつにしています
+              <strong>KOTA</strong>
+              日々の発見と楽しい時間が好き<br />
+              <strong>CHIHARU</strong>
+              人と人とのつながりをたいせつにしています
             </p>
 
-            <p>ふたりへのメッセージをぜひ聞かせてください</p>
+            <p>
+              ふたりへのメッセージをぜひ聞かせてください
+            </p>
           </div>
 
           <a
@@ -204,7 +308,6 @@
         <section class="section action-row" id="rsvp">
           <div class="section__heading">
             <p class="section__title">RSVP</p>
-            <p class="section__sub">ご出欠のご回答</p>
           </div>
 
           <div class="action-row__copy">
@@ -229,9 +332,8 @@
 
         <footer class="footer">
           <p class="footer__thanks">Thank you!</p>
-          <p class="footer__names">KOTA &amp; CHIHARU</p>
-          <p class="footer__small">LIFE IS BETTER<br />TOGETHER.</p>
         </footer>
+
       </div>
     </main>
 
