@@ -4,11 +4,17 @@ const heroVideo = document.querySelector('.hero__video');
 const hero = document.querySelector('.hero');
 
 if (heroVideo) {
-  const revealVideo = () => {
-    window.setTimeout(() => hero?.classList.add('video-started'), 2000);
-  };
+  heroVideo.pause();
 
-  heroVideo.addEventListener('playing', revealVideo, { once: true });
+  window.setTimeout(() => {
+    hero?.classList.add('video-started');
+
+    // Green overlay fades out for 1.2 seconds before the video starts.
+    window.setTimeout(() => {
+      heroVideo.play().catch(() => {});
+    }, 1200);
+  }, 3000);
+
   heroVideo.addEventListener('error', () => {
     heroVideo.style.display = 'none';
   });
