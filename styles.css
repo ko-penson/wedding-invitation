@@ -11,8 +11,10 @@ body {
 }
 
 .hero__video {
-  opacity: .34;
-  filter: grayscale(1) sepia(.35) hue-rotate(65deg) saturate(.7) brightness(.55);
+  object-fit: cover;
+  z-index: -3;
+  opacity: .58;
+  filter: grayscale(1) sepia(.25) hue-rotate(65deg) saturate(.8) brightness(.68);
   mix-blend-mode: screen;
 }
 
