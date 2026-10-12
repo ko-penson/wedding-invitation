@@ -9,11 +9,11 @@ if (heroVideo) {
   window.setTimeout(() => {
     hero?.classList.add('video-started');
 
-    // 緑が透明になったあとに動画を開始
+    // Green overlay fades out for 0.5 seconds before the video starts.
     window.setTimeout(() => {
       heroVideo.play().catch(() => {});
-    }, 1200);
-  }, 1500);
+    }, 500);
+  }, 1000);
 
   heroVideo.addEventListener('error', () => {
     heroVideo.style.display = 'none';
@@ -21,7 +21,6 @@ if (heroVideo) {
 }
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-
 if (prefersReducedMotion.matches && heroVideo) {
   heroVideo.pause();
 }
