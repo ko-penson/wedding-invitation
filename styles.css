@@ -103,6 +103,10 @@ html.js .section.is-visible > * {
   mix-blend-mode: normal;
 }
 
+.hero--contain .hero__video {
+  object-fit: contain;
+}
+
 .hero__wash {
   z-index: -2;
   background: rgba(3, 34, 17, .92);
