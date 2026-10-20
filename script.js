@@ -68,19 +68,149 @@ if (heroVideo) {
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 if (prefersReducedMotion.matches && heroVideo) { heroVideo.pause(); }
 
-const sections = document.querySelectorAll('.section');
-if (prefersReducedMotion.matches || !('IntersectionObserver' in window)) {
-  sections.forEach((section) => section.classList.add('is-visible'));
+
+/* ==========================================================
+   ここから下: ヒーロー以外の動き
+   ========================================================== */
+
+const reduceMotion = prefersReducedMotion.matches;
+const body = document.body;
+
+// ---- 文字を1文字ずつ分解(data-split) ----
+document.querySelectorAll('[data-split]').forEach((el) => {
+  const text = el.textContent.trim();
+  el.setAttribute('aria-label', text);
+  el.textContent = '';
+  let index = 0;
+  text.split(/(\s+)/).forEach((part) => {
+    if (/^\s+$/.test(part)) { el.appendChild(document.createTextNode(' ')); return; }
+    const word = document.createElement('span');
+    word.className = 'w';
+    word.setAttribute('aria-hidden', 'true');
+    [...part].forEach((char) => {
+      const ch = document.createElement('span');
+      ch.className = 'ch';
+      ch.style.setProperty('--i', index++);
+      ch.textContent = char;
+      word.appendChild(ch);
+    });
+    el.appendChild(word);
+  });
+});
+
+// ---- 画面に入ったらふわっと表示 ----
+const revealTargets = document.querySelectorAll('[data-reveal], [data-split]');
+if (reduceMotion || !('IntersectionObserver' in window)) {
+  revealTargets.forEach((el) => el.classList.add('is-in'));
 } else {
-  const sectionObserver = new IntersectionObserver((entries, observer) => {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
-      entry.target.classList.add('is-visible');
+      entry.target.classList.add('is-in');
       observer.unobserve(entry.target);
     });
-  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
-  sections.forEach((section) => sectionObserver.observe(section));
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
+  revealTargets.forEach((el) => revealObserver.observe(el));
 }
+
+// ---- 写真の読み込み(無いときは仮表示のまま) ----
+document.querySelectorAll('.parallax[data-photo]').forEach((box) => {
+  const img = box.querySelector('.parallax__img');
+  const probe = new Image();
+  probe.onload = () => {
+    img.style.backgroundImage = `url("${box.dataset.photo}")`;
+    box.classList.add('has-img');
+  };
+  probe.src = box.dataset.photo;
+});
+
+// ---- メッセージ動画(ファイルが無いときは COMING SOON) ----
+document.querySelectorAll('.msg-video[data-video]').forEach((box) => {
+  const video = document.createElement('video');
+  video.controls = true;
+  video.playsInline = true;
+  video.preload = 'metadata';
+  video.addEventListener('error', () => { video.remove(); box.classList.add('is-empty'); }, { once: true });
+  video.src = box.dataset.video;
+  box.appendChild(video);
+});
+
+// ---- ヘッダー / 進行バー ----
+const progressBar = document.querySelector('.progress i');
+function onScrollUi() {
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar?.style.setProperty('--p', max > 0 ? (window.scrollY / max).toFixed(4) : 0);
+  const heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 0;
+  body.classList.toggle('past-hero', window.scrollY > heroBottom - 80);
+}
+
+// ---- メニュー ----
+const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+function setMenu(open) {
+  body.classList.toggle('menu-open', open);
+  menuToggle?.setAttribute('aria-expanded', String(open));
+  menu?.setAttribute('aria-hidden', String(!open));
+}
+menuToggle?.addEventListener('click', () => setMenu(!body.classList.contains('menu-open')));
+menu?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+window.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+
+// ---- スクロールで写真/文字が「遅れて」流れる ----
+const parallaxItems = [...document.querySelectorAll('.parallax')].map((box) => ({
+  box, img: box.querySelector('.parallax__img'), current: 0, target: 0,
+}));
+const slideItems = [...document.querySelectorAll('[data-slide]')].map((el) => ({
+  el, speed: parseFloat(el.dataset.slide) || -0.3, current: 0, target: 0,
+}));
+
+let ticking = false;
+
+function measure() {
+  const vh = window.innerHeight;
+  parallaxItems.forEach((item) => {
+    const r = item.box.getBoundingClientRect();
+    if (r.bottom < -200 || r.top > vh + 200) return;
+    const progress = (r.top + r.height / 2 - vh / 2) / vh;        // 画面中央で 0
+    const limit = r.height * 0.17;
+    item.target = Math.max(-limit, Math.min(limit, -progress * r.height * 0.28));
+  });
+  slideItems.forEach((item) => {
+    const r = item.el.parentElement.getBoundingClientRect();
+    if (r.bottom < -200 || r.top > vh + 200) return;
+    const progress = (r.top + r.height / 2 - vh / 2) / vh;
+    item.target = progress * item.speed * window.innerWidth;
+  });
+}
+
+function frame() {
+  let moving = false;
+  parallaxItems.forEach((item) => {
+    item.current += (item.target - item.current) * 0.09;          // 0.09 = 遅れ具合(小さいほどゆっくり追いかける)
+    if (Math.abs(item.target - item.current) > 0.1) moving = true;
+    item.img.style.transform = `translate3d(0, ${item.current.toFixed(2)}px, 0)`;
+  });
+  slideItems.forEach((item) => {
+    item.current += (item.target - item.current) * 0.09;
+    if (Math.abs(item.target - item.current) > 0.1) moving = true;
+    const base = item.el.classList.contains('concept__bg') ? 'translateY(-50%) ' : '';
+    item.el.style.transform = `${base}translate3d(${item.current.toFixed(2)}px, 0, 0)`;
+  });
+  if (moving) requestAnimationFrame(frame); else ticking = false;
+}
+
+function onScroll() {
+  onScrollUi();
+  if (reduceMotion) return;
+  measure();
+  if (!ticking) { ticking = true; requestAnimationFrame(frame); }
+}
+
+window.addEventListener('scroll', onScroll, { passive: true });
+window.addEventListener('resize', onScroll);
+window.addEventListener('load', onScroll);
+onScroll();
+
 
 // タイトルを「動画エリアのど真ん中」に置くための移動量を測る(スマホのみ)
 function setTitleShift() {
