@@ -32,7 +32,7 @@ if (heroVideo) {
 
   heroVideo.addEventListener('playing', () => { hero?.classList.add('video-playing'); }, { once: true });
 
-  // スマホ: 2秒後にタイトルが下へ → 動きが落ち着いてから動画スタート
+  // スマホ: 2秒後にタイトルが3秒かけて下へ → 動き終わってから動画スタート
   // PC    : 従来どおり 1秒後に動画スタート
   const TITLE_DOWN_AT = 2000;   // タイトルが動き始める時間
   const START_AT_PHONE = 5300;  // 動画スタート(タイトルが3秒で動き終わったあと)
