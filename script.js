@@ -81,3 +81,19 @@ if (prefersReducedMotion.matches || !('IntersectionObserver' in window)) {
   }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
   sections.forEach((section) => sectionObserver.observe(section));
 }
+
+// タイトルを「動画エリアのど真ん中」に置くための移動量を測る(スマホのみ)
+function setTitleShift() {
+  const media = document.querySelector('.hero__media');
+  const content = document.querySelector('.hero__content');
+  if (!media || !content) return;
+  if (!portraitQuery.matches) { content.style.removeProperty('--shift'); return; }
+  const gap = parseFloat(getComputedStyle(content).marginTop) || 0;
+  const shift = media.offsetHeight / 2 + gap + content.offsetHeight / 2;
+  content.style.setProperty('--shift', Math.round(shift) + 'px');
+}
+setTitleShift();
+window.addEventListener('resize', setTitleShift);
+window.addEventListener('load', setTitleShift);
+portraitQuery.addEventListener?.('change', setTitleShift);
+document.fonts?.ready.then(setTitleShift);
