@@ -728,12 +728,12 @@ dd,
     position: relative;
     margin-top: var(--gap);
     padding: 0 .5rem;
-    transform: translateY(calc(-1 * (var(--box) / 2 + var(--gap) + 50%))) rotate(-1deg);
-    transition: transform 3s cubic-bezier(.45, 0, .25, 1);
+    transform: translateY(calc(-1 * var(--shift, 0px))) rotate(-1deg);
   }
 
   .hero.title-down .hero__content {
     transform: translateY(0) rotate(-1deg);
+    transition: transform 3s cubic-bezier(.45, 0, .25, 1);
   }
 
   .hero__names { margin-bottom: 0; }
