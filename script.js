@@ -34,8 +34,8 @@ if (heroVideo) {
 
   // スマホ: 2秒後にタイトルが下へ → 動きが落ち着いてから動画スタート
   // PC    : 従来どおり 1秒後に動画スタート
-  const TITLE_DOWN_AT = 2000;
-  const START_AT_PHONE = 3000;
+  const TITLE_DOWN_AT = 2000;   // タイトルが動き始める時間
+  const START_AT_PHONE = 5300;  // 動画スタート(タイトルが3秒で動き終わったあと)
   const START_AT_PC = 1000;
 
   const startVideo = () => {
