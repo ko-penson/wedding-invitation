@@ -11,10 +11,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" href="assets/ampersand.ttf" as="font" type="font/ttf" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&family=Yomogi&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&family=Yomogi&display=block"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      /* フォントが読み込まれるまで画面を隠す(3秒たったら必ず表示) */
+      document.documentElement.classList.add("js", "fonts-loading");
+      setTimeout(function () { document.documentElement.classList.remove("fonts-loading"); }, 3000);
+    </script>
   </head>
 
   <body>
@@ -65,10 +70,10 @@
       <!-- 流れる文字帯 -->
       <div class="marquee" aria-hidden="true">
         <div class="marquee__track">
-          <span>KOTA &amp; CHIHARU ・ 2027.01.30 ・ ACE HOTEL KYOTO ・ </span>
-          <span>KOTA &amp; CHIHARU ・ 2027.01.30 ・ ACE HOTEL KYOTO ・ </span>
-          <span>KOTA &amp; CHIHARU ・ 2027.01.30 ・ ACE HOTEL KYOTO ・ </span>
-          <span>KOTA &amp; CHIHARU ・ 2027.01.30 ・ ACE HOTEL KYOTO ・ </span>
+          <span>2027.01.30　ACE HOTEL KYOTO　KOTA &amp; CHIHARU　</span>
+          <span>2027.01.30　ACE HOTEL KYOTO　KOTA &amp; CHIHARU　</span>
+          <span>2027.01.30　ACE HOTEL KYOTO　KOTA &amp; CHIHARU　</span>
+          <span>2027.01.30　ACE HOTEL KYOTO　KOTA &amp; CHIHARU　</span>
         </div>
       </div>
 
@@ -216,6 +221,17 @@
             </div>
           </div>
         </div>
+
+        <!-- Google Map(ACE HOTEL KYOTO) -->
+        <div class="wrap venue__map" data-reveal>
+          <iframe
+            title="ACE HOTEL KYOTO の地図"
+            src="https://maps.google.com/maps?q=ACE+HOTEL+KYOTO&hl=ja&z=16&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
+        </div>
       </section>
 
       <!-- ===== CONCEPT ===== -->
@@ -351,7 +367,7 @@
       </section>
 
       <footer class="footer">
-        <p class="footer__thanks" aria-label="Thank you!" data-slide="-0.25">Thank you! Thank you! Thank you!</p>
+        <p class="footer__thanks">Thank you!</p>
         <p class="footer__small">KOTA &amp; CHIHARU ・ 2027.01.30</p>
       </footer>
     </main>
