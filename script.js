@@ -73,6 +73,18 @@ if (prefersReducedMotion.matches && heroVideo) { heroVideo.pause(); }
    ここから下: ヒーロー以外の動き
    ========================================================== */
 
+// ---- フォントが揃ってから表示(最初から正しいフォントで見せる) ----
+const showPage = () => document.documentElement.classList.remove('fonts-loading');
+if (document.fonts?.load) {
+  Promise.all([
+    document.fonts.load('1em Ampersand', 'KOTA CHIHARU 2027.01.30'),
+    document.fonts.load('1em Yomogi', '南皓太船澤千春あいうえおアイウエオ'),
+    document.fonts.load('700 1em DynaPuff', 'OUR WEDDING KOTA CHIHARU'),
+  ]).then(() => document.fonts.ready).then(showPage, showPage);
+} else {
+  showPage();
+}
+
 const reduceMotion = prefersReducedMotion.matches;
 const body = document.body;
 
