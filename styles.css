@@ -23,6 +23,10 @@
   font-display: block;
 }
 
+/* 文字が読み込まれるまでは全体を隠して、最初から正しいフォントで見せる */
+body { transition: opacity .5s ease; }
+html.fonts-loading body { opacity: 0; }
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
@@ -31,7 +35,7 @@ body {
   overflow-x: hidden;
   color: var(--mint);
   background: var(--forest);
-  font-family: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
+  font-family: "Ampersand", "Yomogi", "Hiragino Maru Gothic ProN", "Yu Gothic", sans-serif;
   font-weight: 400;
   line-height: 2;
   letter-spacing: .06em;
@@ -150,7 +154,7 @@ img, video { max-width: 100%; }
   justify-items: center;
   text-decoration: none;
   color: var(--sage);
-  font-family: "DynaPuff", sans-serif;
+  font-family: "Ampersand", "Yomogi", sans-serif;
   font-size: .85rem;
   letter-spacing: .15em;
   line-height: 1.6;
@@ -304,9 +308,9 @@ body.past-hero:not(.menu-open) .site-header {
 
 .site-header__logo {
   color: var(--tan);
-  font-family: "DynaPuff", sans-serif;
+  font-family: "Ampersand", "Yomogi", sans-serif;
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: .06em;
   text-decoration: none;
 }
@@ -324,7 +328,7 @@ body.past-hero:not(.menu-open) .site-header {
   border: 0;
   background: none;
   color: var(--tan);
-  font-family: "DynaPuff", sans-serif;
+  font-family: "Ampersand", "Yomogi", sans-serif;
   font-size: .85rem;
   letter-spacing: .2em;
   cursor: pointer;
@@ -399,7 +403,7 @@ body.menu-open .menu li:nth-child(8) { transition-delay: .45s; }
   gap: 1.2rem;
   padding: .7rem 0;
   color: var(--tan);
-  font-family: "DynaPuff", sans-serif;
+  font-family: "Ampersand", "Yomogi", sans-serif;
   font-size: clamp(1.6rem, 6vw, 2.4rem);
   letter-spacing: .04em;
   text-decoration: none;
@@ -421,20 +425,20 @@ body.menu-open .menu li:nth-child(8) { transition-delay: .45s; }
 
 .marquee {
   overflow: hidden;
-  padding: 1.1rem 0;
-  border-bottom: 1px solid var(--line);
-  background: var(--forest-deep);
-  color: var(--tan);
-  font-family: "DynaPuff", sans-serif;
-  font-size: clamp(.95rem, 3vw, 1.3rem);
-  letter-spacing: .2em;
+  padding: .55rem 0;
+  border-bottom: 1px solid rgba(211, 229, 211, .12);
+  background: var(--forest);
+  color: rgba(166, 187, 176, .55);
+  font-family: "Ampersand", "Yomogi", sans-serif;
+  font-size: .72rem;
+  letter-spacing: .28em;
   white-space: nowrap;
 }
 
 .marquee__track {
   display: flex;
   width: max-content;
-  animation: marquee 32s linear infinite;
+  animation: marquee 80s linear infinite;
 }
 
 .marquee__track span { padding-right: 0; }
@@ -462,7 +466,7 @@ body.menu-open .menu li:nth-child(8) { transition-delay: .45s; }
 .label {
   margin: 0 0 1rem;
   color: var(--sage);
-  font-family: "DynaPuff", sans-serif;
+  font-family: "Ampersand", "Yomogi", sans-serif;
   font-size: .8rem;
   letter-spacing: .3em;
   line-height: 1.6;
@@ -471,9 +475,9 @@ body.menu-open .menu li:nth-child(8) { transition-delay: .45s; }
 .display {
   margin: 0 0 clamp(2.5rem, 7vw, 5rem);
   color: var(--tan);
-  font-family: "DynaPuff", sans-serif;
+  font-family: "Ampersand", "Yomogi", sans-serif;
   font-size: clamp(3.2rem, 14vw, 9rem);
-  font-weight: 700;
+  font-weight: 400;
   line-height: .95;
   letter-spacing: -.03em;
 }
@@ -611,7 +615,7 @@ html.js [data-reveal].is-in:not([data-split]) {
   place-items: center;
   border: 1px dashed rgba(223, 197, 167, .3);
   color: rgba(223, 197, 167, .45);
-  font-family: "DynaPuff", sans-serif;
+  font-family: "Ampersand", "Yomogi", sans-serif;
   font-size: .85rem;
   letter-spacing: .3em;
   text-align: center;
@@ -647,9 +651,9 @@ html.js .reveal-curtain[data-reveal]:not([data-split]) {
   z-index: 2;
   margin: 0;
   color: var(--cream);
-  font-family: "DynaPuff", sans-serif;
+  font-family: "Ampersand", "Yomogi", sans-serif;
   font-size: clamp(2.4rem, 11vw, 7rem);
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1;
   letter-spacing: -.02em;
   text-shadow: 0 2px 30px rgba(0, 0, 0, .35);
@@ -687,9 +691,9 @@ html.js .reveal-curtain[data-reveal]:not([data-split]) {
 .bigdate {
   margin: 0;
   color: var(--tan);
-  font-family: "DynaPuff", sans-serif;
+  font-family: "Ampersand", "Yomogi", sans-serif;
   font-size: clamp(3rem, 17vw, 10.5rem);
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1;
   letter-spacing: -.04em;
 }
@@ -697,7 +701,7 @@ html.js .reveal-curtain[data-reveal]:not([data-split]) {
 .bigdate__day {
   margin: .5rem 0 3rem;
   color: var(--sage);
-  font-family: "DynaPuff", sans-serif;
+  font-family: "Ampersand", "Yomogi", sans-serif;
   letter-spacing: .5em;
 }
 
@@ -724,7 +728,7 @@ html.js .reveal-curtain[data-reveal]:not([data-split]) {
 .timeline dd {
   margin: 0;
   color: var(--cream);
-  font-family: "DynaPuff", sans-serif;
+  font-family: "Ampersand", "Yomogi", sans-serif;
   font-size: clamp(1.8rem, 6vw, 2.6rem);
   line-height: 1.2;
   letter-spacing: .04em;
@@ -743,6 +747,18 @@ html.js .reveal-curtain[data-reveal]:not([data-split]) {
   margin: 0;
   color: var(--mint);
   font-size: .95rem;
+}
+
+.venue__map {
+  margin-top: clamp(2.5rem, 7vw, 4.5rem);
+}
+
+.venue__map iframe {
+  display: block;
+  width: 100%;
+  height: clamp(300px, 52vw, 460px);
+  border: 1px solid var(--line);
+  filter: grayscale(.35) contrast(.95) brightness(.92);
 }
 
 @media (min-width: 900px) {
@@ -766,9 +782,9 @@ html.js .reveal-curtain[data-reveal]:not([data-split]) {
   margin: 0;
   color: transparent;
   -webkit-text-stroke: 1px rgba(223, 197, 167, .16);
-  font-family: "DynaPuff", sans-serif;
+  font-family: "Ampersand", "Yomogi", sans-serif;
   font-size: clamp(8rem, 30vw, 22rem);
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1;
   letter-spacing: -.04em;
   white-space: nowrap;
@@ -836,7 +852,7 @@ html.js .reveal-curtain[data-reveal]:not([data-split]) {
   display: grid;
   place-items: center;
   color: rgba(223, 197, 167, .45);
-  font-family: "DynaPuff", sans-serif;
+  font-family: "Ampersand", "Yomogi", sans-serif;
   font-size: .8rem;
   letter-spacing: .3em;
 }
@@ -889,7 +905,7 @@ html.js .reveal-curtain[data-reveal]:not([data-split]) {
   display: inline-block;
   min-width: 6.5em;
   color: var(--tan);
-  font-family: "DynaPuff", sans-serif;
+  font-family: "Ampersand", "Yomogi", sans-serif;
   letter-spacing: .1em;
 }
 
@@ -911,20 +927,18 @@ html.js .reveal-curtain[data-reveal]:not([data-split]) {
 .footer__thanks {
   margin: 0;
   color: var(--tan);
-  font-family: "DynaPuff", sans-serif;
-  font-size: clamp(3rem, 14vw, 9rem);
-  font-weight: 700;
+  font-family: "Ampersand", "Yomogi", sans-serif;
+  font-size: clamp(3.4rem, 15vw, 8rem);
+  font-weight: 400;
   line-height: 1.1;
-  letter-spacing: -.03em;
-  white-space: nowrap;
-  text-align: left;
-  will-change: transform;
+  letter-spacing: .02em;
+  text-align: center;
 }
 
 .footer__small {
   margin: 3rem 0 0;
   color: var(--sage);
-  font-family: "DynaPuff", sans-serif;
+  font-family: "Ampersand", "Yomogi", sans-serif;
   font-size: .8rem;
   letter-spacing: .3em;
 }
