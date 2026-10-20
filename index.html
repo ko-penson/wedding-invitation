@@ -11,55 +11,90 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" href="assets/ampersand.ttf" as="font" type="font/ttf" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&family=Yomogi&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&family=Yomogi&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
+    <!-- スクロールの進み具合を示す細い線 -->
+    <div class="progress" aria-hidden="true"><i></i></div>
+
+    <!-- ヘッダー(トップ動画を過ぎたら現れる) -->
+    <header class="site-header">
+      <a class="site-header__logo" href="#top">K<span>&amp;</span>C</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">
+        <span class="menu-toggle__text">MENU</span>
+        <span class="menu-toggle__bars" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </header>
+
+    <nav class="menu" id="menu" aria-label="メニュー" aria-hidden="true">
+      <ul>
+        <li><a href="#greeting"><small>01</small>GREETING</a></li>
+        <li><a href="#date"><small>02</small>DATE</a></li>
+        <li><a href="#venue"><small>03</small>VENUE</a></li>
+        <li><a href="#concept"><small>04</small>CONCEPT</a></li>
+        <li><a href="#kota"><small>05</small>KOTA</a></li>
+        <li><a href="#chiharu"><small>06</small>CHIHARU</a></li>
+        <li><a href="#message"><small>07</small>MESSAGE</a></li>
+        <li><a href="#rsvp"><small>08</small>RSVP</a></li>
+      </ul>
+    </nav>
+
     <main>
-     <section class="hero" id="top" aria-label="ウェルカムページ">
-  <div class="hero__stage">
-    <div class="hero__media">
-      <video class="hero__video" autoplay muted loop playsinline poster="assets/hero-poster.jpg" aria-hidden="true">
-        <source src="assets/hero.mp4" type="video/mp4" />
-      </video>
-      <div class="hero__wash"></div>
-    </div>
-    <div class="hero__content">
-      <h1>OUR<br /><span>WEDDING</span></h1>
-      <p class="hero__names">KOTA <i>&amp;</i> CHIHARU</p>
-    </div>
-  </div>
-  <div class="hero__grain"></div>
-  <a class="scroll-cue" href="#greeting"><span>SCROLL</span><i></i></a>
-</section>
-
-      <div class="paper">
-
-        <section class="section greeting" id="greeting">
-          <div class="section__heading">
-            <p class="section__title">GREETING</p>
+      <!-- ===== トップ動画(変更なし) ===== -->
+      <section class="hero" id="top" aria-label="ウェルカムページ">
+        <div class="hero__stage">
+          <div class="hero__media">
+            <video class="hero__video" autoplay muted loop playsinline poster="assets/hero-poster.jpg" aria-hidden="true">
+              <source src="assets/hero.mp4" type="video/mp4" />
+            </video>
+            <div class="hero__wash"></div>
           </div>
+          <div class="hero__content">
+            <h1>OUR<br /><span>WEDDING</span></h1>
+            <p class="hero__names">KOTA <i>&amp;</i> CHIHARU</p>
+          </div>
+        </div>
+        <div class="hero__grain"></div>
+        <a class="scroll-cue" href="#greeting"><span>SCROLL</span><i></i></a>
+      </section>
+
+      <!-- 流れる文字帯 -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>KOTA &amp; CHIHARU ・ 2027.01.30 ・ ACE HOTEL KYOTO ・ </span>
+          <span>KOTA &amp; CHIHARU ・ 2027.01.30 ・ ACE HOTEL KYOTO ・ </span>
+          <span>KOTA &amp; CHIHARU ・ 2027.01.30 ・ ACE HOTEL KYOTO ・ </span>
+          <span>KOTA &amp; CHIHARU ・ 2027.01.30 ・ ACE HOTEL KYOTO ・ </span>
+        </div>
+      </div>
+
+      <!-- ===== GREETING ===== -->
+      <section class="sec greeting" id="greeting">
+        <div class="wrap">
+          <p class="label" data-reveal>・GREETING</p>
+          <h2 class="display" data-split>GREETING</h2>
 
           <div class="greeting__body">
-            <p>
+            <p data-reveal>
               師走の風が身にしみる頃となりました<br />
               皆さまいかがお過ごしでしょうか
             </p>
 
-            <p>
+            <p data-reveal>
               本日は　私たち2人のたいせつな皆さまへ<br />
               お伝えしたいことがあります
             </p>
 
-            <p>
+            <p data-reveal>
               少し長くなりますが<br />
               私たちの今の気持ちを読んでいただけたら嬉しいです
             </p>
 
-            <p>
+            <p data-reveal>
               大阪と埼玉<br />
               それぞれの土地で生まれ<br />
               それぞれの人生を歩んできた私たちは<br />
@@ -67,7 +102,7 @@
               これからの人生を共に歩んでいくことを決めました
             </p>
 
-            <p>
+            <p data-reveal>
               そのご報告と<br />
               これから夫婦として歩んでいく決意<br />
               そして　これまで支えてくださった皆さまへ<br />
@@ -75,13 +110,13 @@
               結婚式を挙げることにしました
             </p>
 
-            <p>
+            <p data-reveal>
               それぞれの人生を応援し<br />
               支えてきてくださったたいせつな皆さまに<br />
               私たちの新しい門出を見守っていただけたら嬉しいです
             </p>
 
-            <p>
+            <p data-reveal>
               そしてこの日が<br />
               これまでのことや　これからのことを語り合い<br />
               私たちから皆さまへ<br />
@@ -89,219 +124,55 @@
               気持ちを交わせるような時間になればと思っています
             </p>
 
-            <p>
+            <p data-reveal>
               これから先も<br />
               夫婦ともども変わらずお付き合いいただけたら嬉しいです
             </p>
 
-            <p>
+            <p data-reveal>
               一人ひとりの顔を思い浮かべながら<br />
               心を込めて準備してまいります
             </p>
 
-            <p>
+            <p data-reveal>
               ぜひご出席いただきますよう<br />
               よろしくお願いします
             </p>
 
-            <p class="greeting__sign">
+            <p class="greeting__sign" data-reveal>
               南 皓太　　　　船澤 千春
             </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="section split" id="date">
-          <div class="section__heading">
-            <p class="section__title">DATE</p>
-          </div>
-
-          <div class="info-block date-block">
-            <p class="big-date">
-              2027.01.30 <small>SAT</small>
-            </p>
-
-            <dl>
-              <div>
-                <dt>受付.</dt>
-                <dd>12:45</dd>
-              </div>
-            </dl>
-
-            <p class="arrival-note">
-              12:45までにはお越しください
-            </p>
-
-            <dl>
-              <div>
-                <dt>開宴</dt>
-                <dd>13:00</dd>
-              </div>
-
-              <div>
-                <dt>おひらき.</dt>
-                <dd>16:30</dd>
-              </div>
-            </dl>
-          </div>
-
-          <div class="calendar-doodle" aria-hidden="true">
-            <span>JAN</span>
-            <strong>30</strong>
-            <i>♡</i>
-          </div>
-        </section>
-
-        <section class="section split venue" id="venue">
-          <div class="section__heading">
-            <p class="section__title">VENUE</p>
-          </div>
-
-          <div class="info-block">
-            <h2>ACE HOTEL KYOTO</h2>
-
-            <p>
-              〒604-8185 京都府京都市中京区車屋町245-2
-            </p>
-
-            <a
-              class="outline-button"
-              href="https://maps.google.com/?q=Ace+Hotel+Kyoto+245-2+Kurumayacho+Kyoto"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span class="pin">⌖</span>
-              Google Map で見る
-              <b>→</b>
-            </a>
-
-            <a
-              class="venue-official"
-              href="https://jp.acehotel.com/kyoto/access/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              ACE HOTELへのアクセスはこちら↗︎
-            </a>
-
-            <p class="access">
-              地下鉄「烏丸御池駅」直結
-            </p>
-          </div>
-
-          <div class="venue-doodle" aria-hidden="true">
-            <span>
-              nice<br />
-              food<br />
-              nice<br />
-              people
-            </span>
-
-            <div class="building">
-              <i></i>
-              <i></i>
-              <i></i>
-            </div>
-          </div>
-        </section>
-
-        <section class="section concept" id="concept">
-          <div class="section__heading">
-            <p class="section__title">CONSEPT</p>
-          </div>
-
-          <div class="concept__art" aria-hidden="true">
-            <span>↔</span>
-            <b>
-              RECEIVE<br />
-              &amp;<br />
-              TELL
-            </b>
-          </div>
-
-          <div class="concept__copy">
-            <p class="quote">
-              “ ちゃんと伝える　ちゃんと受け取る ”
-            </p>
-
-            <p>
-              素直な気持ちのキャッチボールは二人の中の熱を高めていく<br />
-              嬉しい 愛おしい わかってほしい そんな気持ちを受け取り合うことで<br />
-              これからも縁をたいせつにし相手も動きたくなる力へと増幅していく
-            </p>
-
-            <p>
-              この一日を未来の「こうありたい」を叶えるためのはじまりに
-            </p>
-          </div>
-        </section>
-
-        <section class="section action-row message" id="message">
-          <div class="section__heading">
-            <p class="section__title">MESSAGE</p>
-          </div>
-
-          <div class="message__copy">
-            <p class="message__intro">
-              KOTAとCHIHARUです<br />
-              これからも好きな人たちと好きなことでつながる時間をたいせつにしていきます
-            </p>
-
-            <p class="message__profile">
-              <strong>KOTA</strong>
-              日々の発見と楽しい時間が好き<br />
-              <strong>CHIHARU</strong>
-              人と人とのつながりをたいせつにしています
-            </p>
-
-            <p>
-              ふたりへのメッセージをぜひ聞かせてください
-            </p>
-          </div>
-
-          <a
-            class="outline-button"
-            href="https://forms.gle/REPLACE_MESSAGE_FORM_URL"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span class="button-icon">☻</span>
-            メッセージを送る
-            <b>→</b>
-          </a>
-        </section>
-
-        <section class="section action-row" id="rsvp">
-          <div class="section__heading">
-            <p class="section__title">RSVP</p>
-          </div>
-
-          <div class="action-row__copy">
-            <p>
-              お手数ですが<br />
-              <strong>2026年12月4日（金）</strong>までに<br />
-              ご回答をお願いいたします
-            </p>
-          </div>
-
-          <a
-            class="outline-button outline-button--wide"
-            href="https://docs.google.com/forms/d/e/1FAIpQLSceiTQsxJZ82voAGPiXna4xVJws0h0hSaHaPVi6BQx3CBKglg/viewform"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span class="button-icon">✎</span>
-            出欠回答フォームへ
-            <b>→</b>
-          </a>
-        </section>
-
-        <footer class="footer">
-          <p class="footer__thanks">Thank you!</p>
-        </footer>
-
+      <!-- 写真の帯(後で写真を選んで差し替え)  assets/photos/scene-1.jpg -->
+      <div class="parallax parallax--band" data-photo="assets/photos/scene-1.jpg" data-label="PHOTO 01">
+        <div class="parallax__img"></div>
       </div>
-    </main>
 
-    <script src="script.js"></script>
-  </body>
-</html>
+      <!-- ===== DATE ===== -->
+      <section class="sec date" id="date">
+        <div class="wrap">
+          <p class="label" data-reveal>・DATE</p>
+          <p class="bigdate" data-split>2027.01.30</p>
+          <p class="bigdate__day" data-reveal>SATURDAY</p>
+
+          <dl class="timeline">
+            <div data-reveal>
+              <dt>受付</dt>
+              <dd>12:45</dd>
+            </div>
+            <div data-reveal>
+              <dt>開宴</dt>
+              <dd>13:00</dd>
+            </div>
+            <div data-reveal>
+              <dt>おひらき</dt>
+              <dd>16:30</dd>
+            </div>
+          </dl>
+
+          <p class="note" data-reveal>12:45までにはお越しください</p>
+        </div>
+      </section>
