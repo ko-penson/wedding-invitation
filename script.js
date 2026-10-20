@@ -97,3 +97,8 @@ window.addEventListener('resize', setTitleShift);
 window.addEventListener('load', setTitleShift);
 portraitQuery.addEventListener?.('change', setTitleShift);
 document.fonts?.ready.then(setTitleShift);
+// 文字や画像の読み込みで大きさが変わったら測り直す
+if ('ResizeObserver' in window) {
+  const ro = new ResizeObserver(setTitleShift);
+  document.querySelectorAll('.hero__media, .hero__content').forEach((el) => ro.observe(el));
+}
