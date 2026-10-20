@@ -665,3 +665,57 @@ dd,
     transform: translateX(-50%);
   }
 }
+
+/* ===== スマホ(縦長画面)用ヒーローレイアウト ===== */
+@media (max-aspect-ratio: 1/1) {
+  .hero {
+    --rh: .5625;                                   /* 動画の 高さ÷幅 (JSが切り替える) */
+    --box: min(calc(100vw * var(--rh)), 60svh);    /* 動画エリアの高さ */
+    display: block;
+    min-height: 100svh;
+  }
+
+  /* 動画: 画面の一番上にぴったり。上の余白なし */
+  .hero .hero__video,
+  .hero.hero--contain .hero__video {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--box);
+    min-height: 0;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  /* 緑のカバーも動画エリアだけ */
+  .hero__wash {
+    height: var(--box);
+  }
+
+  /* タイトル: 最初は動画エリアのど真ん中 */
+  .hero__content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(var(--box) / 2);
+    padding: 0 1rem;
+    transform: translateY(-50%) rotate(-1deg);
+    transition: top .9s cubic-bezier(.22, .8, .24, 1), transform .9s cubic-bezier(.22, .8, .24, 1);
+  }
+
+  /* 少し下へ移動し、そのまま動画の下に居続ける */
+  .hero.title-down .hero__content {
+    top: calc(var(--box) + 2.2rem);
+    transform: translateY(0) rotate(-1deg);
+  }
+
+  /* 白い枠線: 動画とタイトル全体を囲む */
+  .hero::before {
+    inset: .75rem;
+    z-index: 1;
+  }
+}
+
+@media (max-aspect-ratio: 1/1) and (prefers-reduced-motion: reduce) {
+  .hero__content { transition: none; }
+}
