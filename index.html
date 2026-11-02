@@ -28,12 +28,10 @@
       <img class="menu__flower" src="assets/art-purple.webp" alt="" />
       <ul>
         <li><a href="#greeting">Greeting</a></li>
+        <li><a href="#message">Message</a></li>
         <li><a href="#date">Date</a></li>
         <li><a href="#venue">Venue</a></li>
         <li><a href="#concept">Concept</a></li>
-        <li><a href="#kota">Kota</a></li>
-        <li><a href="#chiharu">Chiharu</a></li>
-        <li><a href="#message">Message</a></li>
         <li><a href="#rsvp">RSVP</a></li>
       </ul>
     </nav>
@@ -41,15 +39,15 @@
     <main class="page">
       <!-- ===== トップ ===== -->
       <section class="hero" id="top" aria-label="ウェルカムページ">
-        <img class="hero__art" src="assets/art-hero.webp" alt="" />
-        <div class="hero__oval">
+        <div class="hero__video">
           <video autoplay muted loop playsinline preload="auto" poster="assets/hero-poster.jpg" aria-hidden="true">
             <source src="assets/hero.mp4" type="video/mp4" />
           </video>
         </div>
+        <img class="hero__art" src="assets/art-hero.webp" alt="" />
         <h1 class="hero__title">OUR<br />WEDDING</h1>
         <p class="hero__date" aria-label="1月30日">01<br />30</p>
-        <p class="hero__side" aria-hidden="true">2027.01.30<br />ACE HOTEL KYOTO<br />KOTA &amp; CHIHARU</p>
+        <p class="hero__side" aria-hidden="true">2027.01.30&emsp;Ace Hotel 京都&emsp;KOTA &amp; CHIHARU</p>
         <p class="hero__names">KOTA <i>&amp;</i> CHIHARU</p>
         <a class="hero__scroll" href="#countdown">SCROLL</a>
       </section>
@@ -75,7 +73,7 @@
           <h2 class="frame__title">Greeting</h2>
           <div class="frame__body text-center">
             <p data-reveal>
-              師走の風が身にしみる頃となりました<br />
+              秋も日に日に深くなってまいりました<br />
               皆さまいかがお過ごしでしょうか
             </p>
 
@@ -151,6 +149,42 @@
         </div>
       </section>
 
+      <!-- ===== 2人のメッセージ ===== -->
+      <section class="sec" id="message">
+        <div class="frame">
+          <h2 class="frame__title">Message</h2>
+          <div class="frame__body">
+            <div class="person">
+              <!-- 写真  assets/photos/kota-solo.jpg を入れると自動で差し替わる -->
+              <figure class="photo photo--dome" data-photo="assets/photos/kota-solo.jpg" data-temp="assets/temp-kota.jpg" data-label="KOTA" data-reveal></figure>
+              <div class="person__name" data-reveal>
+                <img class="person__flower" src="assets/art-purple.webp" alt="" />
+                <p class="person__role">Groom</p>
+                <p class="person__en">MINAMI KOTA</p>
+              </div>
+              <div class="person__text text-center">
+                <p data-reveal>ここに皓太のメッセージが入ります。</p>
+                <p data-reveal>2〜3行ずつ、読みやすいところで改行して書き換えてください。</p>
+              </div>
+            </div>
+
+            <div class="person person--flip">
+              <!-- 写真  assets/photos/chiharu-solo.jpg を入れると自動で差し替わる -->
+              <figure class="photo photo--dome" data-photo="assets/photos/chiharu-solo.jpg" data-temp="assets/temp-chiharu.jpg" data-label="CHIHARU" data-reveal></figure>
+              <div class="person__name" data-reveal>
+                <img class="person__flower" src="assets/art-pink.webp" alt="" />
+                <p class="person__role">Bride</p>
+                <p class="person__en">FUNAZAWA<br />CHIHARU</p>
+              </div>
+              <div class="person__text text-center">
+                <p data-reveal>ここに千春のメッセージが入ります。</p>
+                <p data-reveal>2〜3行ずつ、読みやすいところで改行して書き換えてください。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- ===== DATE ===== -->
       <section class="sec" id="date">
         <header class="head">
@@ -167,7 +201,7 @@
             <div class="timeline__main"><dt>開宴</dt><dd>13:00</dd></div>
             <div><dt>おひらき</dt><dd>16:30</dd></div>
           </dl>
-          <p class="frame__note">12:45までにはお越しください</p>
+          <p class="frame__note">12:45までにお越しいただけますと幸いです</p>
         </div>
       </section>
 
@@ -176,10 +210,11 @@
         <div class="frame frame--beigehead" data-reveal>
           <h2 class="frame__title frame__title--sm">Venue</h2>
           <div class="frame__body text-center">
-            <p class="venue__name">ACE HOTEL KYOTO</p>
+            <p class="venue__name">Ace Hotel 京都</p>
             <p class="venue__address">
               〒604-8185 京都府京都市中京区車屋町245-2<br />
-              地下鉄「烏丸御池駅」直結
+              地下鉄「烏丸御池駅」南改札直結<br />
+              TEL <a href="tel:075-279-9003">075-279-9003</a>
             </p>
 
             <!-- 会場の写真  assets/photos/venue.jpg -->
@@ -187,7 +222,7 @@
 
             <div class="map">
               <iframe
-                title="ACE HOTEL KYOTO の地図"
+                title="Ace Hotel 京都 の地図"
                 src="https://maps.google.com/maps?q=ACE+HOTEL+KYOTO&hl=ja&z=16&output=embed"
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
@@ -197,7 +232,7 @@
 
             <div class="btn-col">
               <a class="btn" href="https://maps.google.com/?q=Ace+Hotel+Kyoto+245-2+Kurumayacho+Kyoto" target="_blank" rel="noreferrer">Google Map で見る</a>
-              <a class="btn" href="https://jp.acehotel.com/kyoto/access/" target="_blank" rel="noreferrer">ACE HOTELへのアクセス</a>
+              <a class="btn" href="https://jp.acehotel.com/kyoto/access/" target="_blank" rel="noreferrer">Ace Hotelへのアクセス</a>
             </div>
           </div>
         </div>
@@ -226,70 +261,6 @@
           </p>
         </div>
         <img class="concept__flower" src="assets/art-blush.webp" alt="" />
-      </section>
-
-      <!-- ===== KOTA メッセージ ===== -->
-      <section class="sec" id="kota">
-        <div class="frame">
-          <h2 class="frame__title">Message 01</h2>
-          <div class="frame__body person">
-            <!-- 写真  assets/photos/kota-solo.jpg を入れると自動で差し替わる -->
-            <figure class="photo photo--dome" data-photo="assets/photos/kota-solo.jpg" data-temp="assets/temp-kota.jpg" data-label="KOTA" data-reveal></figure>
-            <div class="person__name" data-reveal>
-              <img class="person__flower" src="assets/art-purple.webp" alt="" />
-              <p class="person__en">KOTA</p>
-              <p class="person__ja">南 皓太</p>
-            </div>
-            <div class="person__text text-center">
-              <p data-reveal>ここに皓太のメッセージが入ります。</p>
-              <p data-reveal>2〜3行ずつ、読みやすいところで改行して書き換えてください。</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===== CHIHARU メッセージ ===== -->
-      <section class="sec sec--tight-top" id="chiharu">
-        <div class="frame">
-          <h2 class="frame__title">Message 02</h2>
-          <div class="frame__body person person--flip">
-            <!-- 写真  assets/photos/chiharu-solo.jpg を入れると自動で差し替わる -->
-            <figure class="photo photo--dome" data-photo="assets/photos/chiharu-solo.jpg" data-temp="assets/temp-chiharu.jpg" data-label="CHIHARU" data-reveal></figure>
-            <div class="person__name" data-reveal>
-              <img class="person__flower" src="assets/art-pink.webp" alt="" />
-              <p class="person__en">CHIHARU</p>
-              <p class="person__ja">船澤 千春</p>
-            </div>
-            <div class="person__text text-center">
-              <p data-reveal>ここに千春のメッセージが入ります。</p>
-              <p data-reveal>2〜3行ずつ、読みやすいところで改行して書き換えてください。</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===== みなさんからのメッセージ ===== -->
-      <section class="sec sec--beige" id="message">
-        <header class="head">
-          <img class="head__flower head__flower--left" src="assets/art-purple.webp" alt="" />
-          <h2 class="head__title">Message</h2>
-        </header>
-        <div class="text-center">
-          <p data-reveal>
-            KOTAとCHIHARUです<br />
-            これからも好きな人たちと好きなことでつながる時間をたいせつにしていきます
-          </p>
-
-          <dl class="likes" data-reveal>
-            <div><dt>KOTA</dt><dd>日々の発見と楽しい時間が好き</dd></div>
-            <div><dt>CHIHARU</dt><dd>人と人とのつながりをたいせつにしています</dd></div>
-          </dl>
-
-          <p data-reveal>ふたりへのメッセージをぜひ聞かせてください</p>
-        </div>
-        <div class="btn-col" data-reveal>
-          <a class="btn btn--terra" href="https://forms.gle/REPLACE_MESSAGE_FORM_URL" target="_blank" rel="noreferrer">メッセージを送る</a>
-        </div>
       </section>
 
       <!-- ===== RSVP ===== -->

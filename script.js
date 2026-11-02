@@ -84,4 +84,4 @@ if ('IntersectionObserver' in window) {
 }
 
 // iPhoneの省電力モードなどで自動再生されないときは、最初の画像のまま見せる
-document.querySelector('.hero__oval video')?.play().catch(() => {});
+document.querySelector('.hero__video video')?.play().catch(() => {});

@@ -133,19 +133,18 @@ body.menu-open .menu { opacity: 1; visibility: visible; }
   object-position: center;
 }
 
-.hero__oval {
+.hero__video {
   position: absolute;
   top: 15%;
   left: 50%;
   height: calc(var(--h) * .69);
   width: min(80cqw, calc(var(--h) * .69 * .66));
   transform: translateX(-50%);
-  border-radius: 50%;
   overflow: hidden;
   background: #9fa79a url("assets/hero-poster.jpg") center / cover;
 }
 
-.hero__oval video {
+.hero__video video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -153,10 +152,10 @@ body.menu-open .menu { opacity: 1; visibility: visible; }
 
 .hero__title {
   position: absolute;
-  top: max(3.2%, env(safe-area-inset-top));
+  top: max(2.4%, env(safe-area-inset-top));
   left: 5cqw;
   font-family: var(--display);
-  font-size: min(15.5cqw, 72px);
+  font-size: min(13cqw, calc(var(--h) * .06), 72px);
   font-weight: 400;
   line-height: 1.04;
   letter-spacing: .01em;
@@ -182,7 +181,9 @@ body.menu-open .menu { opacity: 1; visibility: visible; }
   font-size: 11.5px;
   line-height: 1.5;
   letter-spacing: .14em;
+  white-space: nowrap;
   writing-mode: vertical-rl;
+  text-orientation: sideways;
   transform: rotate(180deg);
 }
 
@@ -289,7 +290,6 @@ body.menu-open .menu { opacity: 1; visibility: visible; }
 }
 
 .sec--tight { padding-top: 0; }
-.sec--tight-top { padding-top: 0; }
 .sec--beige { background: var(--beige); }
 
 .sec--terra {
@@ -351,10 +351,8 @@ body.menu-open .menu { opacity: 1; visibility: visible; }
   width: 78px;
 }
 
-.head__flower--left { left: 2px; right: auto; }
-
 /* 長い一文が折り返すときも文節で切れるように */
-.text-center p, .frame__note, .venue__address, .likes dd {
+.text-center p, .frame__note, .venue__address {
   word-break: auto-phrase;
   overflow-wrap: anywhere;
   text-wrap: balance;
@@ -514,6 +512,8 @@ body.menu-open .menu { opacity: 1; visibility: visible; }
   line-height: 1.9;
 }
 
+.venue__address a { text-decoration: none; }
+
 .map {
   margin-top: 16px;
   aspect-ratio: 4 / 3;
@@ -540,7 +540,6 @@ body.menu-open .menu { opacity: 1; visibility: visible; }
   text-decoration: none;
 }
 
-.btn--terra { border-color: var(--terra); background: var(--terra); color: #fff; }
 .btn--white { border-color: #fff; background: #fff; color: var(--terra); font-weight: 500; }
 
 .arch {
@@ -579,46 +578,39 @@ body.menu-open .menu { opacity: 1; visibility: visible; }
   opacity: .95;
 }
 
-.person { padding-top: 26px; }
+.person + .person { margin-top: 46px; }
 
 .person__name {
   position: relative;
-  min-height: 118px;
+  min-height: 92px;
   margin-top: 18px;
-  padding-top: 18px;
   text-align: center;
 }
 
 .person__flower {
   position: absolute;
-  top: -18px;
-  left: 0;
-  width: 84px;
+  top: -10px;
+  left: -4px;
+  width: 66px;
 }
 
-.person--flip .person__flower { left: auto; right: 0; }
+.person--flip .person__flower { left: auto; right: -4px; }
+
+.person__role {
+  font-family: var(--narrow);
+  font-size: 13px;
+  line-height: 1.6;
+  letter-spacing: .2em;
+}
 
 .person__en {
   font-family: var(--title);
-  font-size: 25px;
+  font-size: 21px;
   line-height: 1.3;
   letter-spacing: .08em;
 }
 
-.person__ja { font-size: 13px; letter-spacing: .2em; }
-
 .person__text { margin-top: 18px; }
-
-.likes {
-  margin: 1.8em 0;
-  padding: 14px 8px;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.likes div + div { margin-top: 10px; }
-.likes dt { font-family: var(--title); font-size: 16px; line-height: 1.5; letter-spacing: .08em; }
-.likes dd { font-size: 13px; line-height: 1.7; }
 
 .rsvp__title {
   margin-bottom: 20px;
