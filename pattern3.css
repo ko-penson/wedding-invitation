@@ -742,3 +742,5 @@ body { background: var(--terra); font-size: 15px; }
 #message .person__text p, .sec--terra p, .sec--beige .concept__copy p, .arch p {
   -webkit-text-stroke: .3px currentColor;
 }
+
+/* p3 */
