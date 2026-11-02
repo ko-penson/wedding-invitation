@@ -136,17 +136,6 @@ document.querySelectorAll('.parallax[data-photo]').forEach((box) => {
   probe.src = box.dataset.photo;
 });
 
-// ---- メッセージ動画(ファイルが無いときは COMING SOON) ----
-document.querySelectorAll('.msg-video[data-video]').forEach((box) => {
-  const video = document.createElement('video');
-  video.controls = true;
-  video.playsInline = true;
-  video.preload = 'metadata';
-  video.addEventListener('error', () => { video.remove(); box.classList.add('is-empty'); }, { once: true });
-  video.src = box.dataset.video;
-  box.appendChild(video);
-});
-
 // ---- ヘッダー / 進行バー ----
 const progressBar = document.querySelector('.progress i');
 function onScrollUi() {
