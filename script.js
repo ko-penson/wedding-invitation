@@ -8,7 +8,7 @@ const portraitQuery = window.matchMedia('(max-aspect-ratio: 1/1)');
 const heroSource = heroVideo?.querySelector('source');
 const PC_SRC = 'assets/hero.mp4';
 const MOBILE_SRC = 'assets/hero-mobile.mp4';
-let usingFallback = false;
+let usingFallback = true; // 縦長動画(hero-mobile.mp4)を入れたら false に戻す
 
 function applyHeroSource() {
   if (!heroVideo || !heroSource) return;
