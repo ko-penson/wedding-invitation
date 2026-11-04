@@ -935,3 +935,13 @@ body { background: var(--terra); font-size: 15px; }
 }
 
 .prof__text p + p { margin-top: 1.5em; }
+
+/* 2行になる項目は、2行目を1行目の頭にそろえる */
+.prof__info dd { padding-left: 1em; text-indent: -1em; }
+
+/* 「:」を独立した列にして、2行目も1行目と同じ位置から始める */
+.prof__info div { grid-template-columns: 5.4em 1.1em auto; }
+.prof__info div::after { content: ":"; grid-column: 2; grid-row: 1; }
+.prof__info dt { grid-column: 1; }
+.prof__info dd { grid-column: 3; grid-row: 1; padding-left: 0; text-indent: 0; }
+.prof__info dd::before { content: none; }
