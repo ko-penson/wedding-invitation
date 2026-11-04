@@ -15,7 +15,7 @@
       rel="stylesheet"
     />
     <link rel="preload" as="font" type="font/ttf" href="assets/ampersand.ttf" crossorigin />
-        <link rel="stylesheet" href="pattern4.css?v=p4a" />
+        <link rel="stylesheet" href="pattern4.css?v=p4b" />
     <script>document.documentElement.classList.add("js");</script>
   </head>
 
@@ -206,55 +206,46 @@
         </div>
       </section>
 
-      <!-- ===== DATE ===== -->
-      <section class="sec" id="date">
-        <header class="head">
-          <img class="head__flower" src="assets/p2-art-pink.png" alt="" />
-          <h2 class="head__title">Date</h2>
-        </header>
-        <p class="bigdate" data-reveal>2027.01.30</p>
-        <p class="bigdate__day" data-reveal>SATURDAY</p>
+      <!-- ===== DATE・VENUE(The Details) ===== -->
+      <section class="details" id="date">
+        <div class="details__top">
+          <img class="details__hand details__hand--phone" src="assets/p5-hand-phone.png" alt="" />
+          <img class="details__hand details__hand--ring" src="assets/p5-hand-ring.png" alt="" />
+          <img class="details__hand details__hand--wine" src="assets/p5-hand-wine.png" alt="" />
+          <img class="details__hand details__hand--martini" src="assets/p5-hand-martini.png" alt="" />
 
-        <div class="frame" data-reveal>
-          <h3 class="frame__title frame__title--sm">Ceremony &amp; Party</h3>
-          <dl class="timeline">
-            <div><dt>受付</dt><dd>12:15</dd></div>
-            <div class="timeline__main"><dt>開宴</dt><dd>13:00</dd></div>
-            <div><dt>おひらき</dt><dd>16:30</dd></div>
-          </dl>
-          <p class="frame__note">12:45までにお越しいただけますと幸いです</p>
+          <h2 class="details__title">The<span>Details</span></h2>
+
+          <p class="details__label">-DATE-</p>
+          <p class="details__year" data-reveal>2027</p>
+          <p class="details__day" data-reveal>01.30<small>(SAT)</small></p>
+          <p class="details__start" data-reveal><span>開始時刻</span>13:00</p>
+          <p class="details__sub" data-reveal>受付 12:15　/　お開き 16:30</p>
+          <p class="details__note" data-reveal>12:45までにお越しいただけますと幸いです</p>
         </div>
-      </section>
 
-      <!-- ===== VENUE ===== -->
-      <section class="sec sec--tight" id="venue">
-        <div class="frame frame--beigehead" data-reveal>
-          <h2 class="frame__title frame__title--sm">Venue</h2>
-          <div class="frame__body text-center">
-            <p class="venue__name">Ace Hotel 京都</p>
-            <p class="venue__address">
-              〒604-8185 京都府京都市中京区車屋町245-2<br />
-              地下鉄「烏丸御池駅」南改札直結<br />
-              TEL <a href="tel:075-279-9003">075-279-9003</a>
-            </p>
+        <div class="details__venue" id="venue">
+          <p class="details__label">-VENUE-</p>
+          <p class="details__name" data-reveal>Ace Hotel Kyoto</p>
+          <p class="details__addr" data-reveal>
+            〒604-8185 京都府京都市中京区車屋町245-2<br />
+            地下鉄「烏丸御池駅」南改札直結<br />
+            TEL <a href="tel:075-279-9003">075-279-9003</a>
+          </p>
 
-            <!-- 会場の写真  assets/photos/venue.jpg -->
-            <figure class="photo photo--wide" data-photo="assets/photos/venue.jpg" data-label="VENUE"></figure>
+          <div class="map">
+            <iframe
+              title="Ace Hotel 京都 の地図"
+              src="https://maps.google.com/maps?q=ACE+HOTEL+KYOTO&hl=ja&z=16&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+          </div>
 
-            <div class="map">
-              <iframe
-                title="Ace Hotel 京都 の地図"
-                src="https://maps.google.com/maps?q=ACE+HOTEL+KYOTO&hl=ja&z=16&output=embed"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                allowfullscreen
-              ></iframe>
-            </div>
-
-            <div class="btn-col">
-              <a class="btn" href="https://maps.google.com/?q=Ace+Hotel+Kyoto+245-2+Kurumayacho+Kyoto" target="_blank" rel="noreferrer">Google Map で見る</a>
-              <a class="btn" href="https://jp.acehotel.com/kyoto/access/" target="_blank" rel="noreferrer">Ace Hotelへのアクセス</a>
-            </div>
+          <div class="btn-col">
+            <a class="btn" href="https://maps.google.com/?q=Ace+Hotel+Kyoto+245-2+Kurumayacho+Kyoto" target="_blank" rel="noreferrer">Google Map で見る</a>
+            <a class="btn" href="https://jp.acehotel.com/kyoto/access/" target="_blank" rel="noreferrer">Ace Hotelへのアクセス</a>
           </div>
         </div>
       </section>

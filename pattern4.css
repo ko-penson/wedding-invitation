@@ -945,3 +945,108 @@ body { background: var(--terra); font-size: 15px; }
 .prof__info dt { grid-column: 1; }
 .prof__info dd { grid-column: 3; grid-row: 1; padding-left: 0; text-indent: 0; }
 .prof__info dd::before { content: none; }
+
+/* 日付と会場(The Details):マスタード地にピンクの手のイラスト */
+#date.details {
+  position: relative;
+  padding: 34px var(--gutter) 56px;
+  background: #D1BD64;
+  color: #1C1B18;
+  text-align: center;
+  overflow: hidden;
+}
+
+.details__top { position: relative; padding-bottom: 8px; }
+
+.details__hand { position: absolute; pointer-events: none; }
+.details__hand--phone { left: calc(var(--gutter) * -1); top: 21%; width: 25cqw; }
+.details__hand--ring { right: calc(var(--gutter) * -1); top: 3%; width: 24cqw; }
+.details__hand--wine { left: calc(var(--gutter) * -1); top: 53%; width: 20cqw; }
+.details__hand--martini { right: calc(var(--gutter) * -1); top: 47%; width: 19cqw; }
+
+.details__title {
+  position: relative;
+  padding-left: 24cqw;
+  font-family: "Ampersand", sans-serif;
+  font-size: min(13cqw, 56px);
+  font-weight: 400;
+  line-height: 1;
+  text-align: left;
+  -webkit-text-stroke: .6px currentColor;
+}
+
+.details__title span { display: block; margin-left: 6cqw; font-size: 1.22em; }
+
+.details__label {
+  position: relative;
+  margin-top: 34px;
+  font-family: var(--geo);
+  font-size: 20px;
+  letter-spacing: .12em;
+}
+
+.details__year, .details__day {
+  position: relative;
+  font-family: var(--geo);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.details__year { margin-top: 12px; font-size: 40px; }
+.details__day { font-size: 44px; letter-spacing: .01em; }
+.details__day small { margin-left: .15em; font-size: .6em; font-weight: 500; }
+
+.details__start {
+  position: relative;
+  margin-top: 26px;
+  font-family: var(--geo);
+  font-size: 34px;
+  letter-spacing: .06em;
+}
+
+.details__start span { margin-right: .5em; font-family: var(--jp); font-size: 18px; font-weight: 500; letter-spacing: .04em; }
+
+.details__sub {
+  position: relative;
+  margin-top: 6px;
+  font-family: var(--geo), var(--jp);
+  font-size: 16px;
+  letter-spacing: .06em;
+}
+
+.details__note {
+  position: relative;
+  width: min(66cqw, 280px);
+  margin: 14px auto 0;
+  padding-top: 10px;
+  border-top: 1.5px solid #3A3833;
+  font-family: var(--jp);
+  font-size: 12.5px;
+  letter-spacing: .04em;
+  text-wrap: balance;
+}
+
+#venue.details__venue { background: none; padding-top: 0; }
+.details__venue .details__label { margin-top: 56px; }
+
+.details__name {
+  margin-top: 10px;
+  font-family: var(--geo);
+  font-size: min(9.4cqw, 38px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: .01em;
+  white-space: nowrap;
+}
+
+.details__addr {
+  margin-top: 12px;
+  font-family: var(--jp);
+  font-size: 13px;
+  line-height: 1.6;
+  letter-spacing: .06em;
+}
+
+.details__addr a { text-decoration: none; }
+.details .map { margin-top: 26px; }
+.details .btn { border-color: #1C1B18; }
