@@ -1050,3 +1050,114 @@ body { background: var(--terra); font-size: 15px; }
 .details__addr a { text-decoration: none; }
 .details .map { margin-top: 26px; }
 .details .btn { border-color: #1C1B18; }
+
+/* コンセプト:生成り地にすっきりした文字 */
+.concept2 {
+  padding: 56px var(--gutter) 60px;
+  background: #FEF6E3;
+  color: #22211E;
+  text-align: center;
+}
+
+.concept2__title, .rsvp2__title, .soon__title {
+  font-family: "Ampersand", sans-serif;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.concept2__title { font-size: 46px; }
+.concept2__art { width: min(26cqw, 110px); margin: 10px auto 0; }
+
+.concept2__quote {
+  margin-top: 30px;
+  font-family: var(--jp);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.9;
+  letter-spacing: .1em;
+}
+
+.concept2__copy { margin-top: 26px; }
+
+.concept2__copy p {
+  font-family: var(--jp);
+  font-size: 13.5px;
+  line-height: 2.2;
+  letter-spacing: .06em;
+  word-break: auto-phrase;
+  text-wrap: balance;
+}
+
+.concept2__copy p + p { margin-top: 1.6em; }
+
+/* 出欠:グリーン地に、押せる丸 */
+.rsvp2 {
+  padding: 52px var(--gutter) 60px;
+  background: var(--green);
+  color: #1C1B18;
+  text-align: center;
+}
+
+.rsvp2__title { font-size: 46px; letter-spacing: .04em; }
+
+.rsvp2__text {
+  margin-top: 18px;
+  font-family: var(--jp);
+  font-size: 14px;
+  line-height: 2.1;
+  letter-spacing: .06em;
+}
+
+.rsvp2__text strong { font-size: 1.2em; font-weight: 500; }
+
+.rsvp2__circle {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  width: min(66cqw, 270px);
+  aspect-ratio: 1;
+  margin: 30px auto 0;
+  border-radius: 50%;
+  background: #FEF6E3;
+  text-decoration: none;
+  transition: transform .2s ease;
+}
+
+.rsvp2__circle:active { transform: scale(.97); }
+
+.rsvp2__mail {
+  width: 38%;
+  fill: none;
+  stroke: #1C1B18;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.rsvp2__go {
+  margin-top: 14px;
+  font-family: var(--jp);
+  font-size: 14.5px;
+  font-weight: 500;
+  letter-spacing: .06em;
+}
+
+.rsvp2__small { font-family: var(--jp); font-size: 11.5px; letter-spacing: .04em; }
+
+/* 最後:ベージュ地 */
+.soon {
+  padding: 40px 16px 46px;
+  background: #DFCCAE;
+  color: #1C1B18;
+  text-align: center;
+}
+
+.soon__title { font-size: 44px; }
+
+.soon__text {
+  margin-top: 6px;
+  font-family: var(--jp);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: .1em;
+}

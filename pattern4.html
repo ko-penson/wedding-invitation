@@ -15,7 +15,7 @@
       rel="stylesheet"
     />
     <link rel="preload" as="font" type="font/ttf" href="assets/ampersand.ttf" crossorigin />
-        <link rel="stylesheet" href="pattern4.css?v=p4b" />
+        <link rel="stylesheet" href="pattern4.css?v=p4c" />
     <script>document.documentElement.classList.add("js");</script>
   </head>
 
@@ -251,49 +251,53 @@
       </section>
 
       <!-- ===== CONCEPT ===== -->
-      <section class="sec sec--beige" id="concept">
-        <span class="concept__side" aria-hidden="true">RECEIVE &amp; TELL</span>
-        <header class="head">
-          <h2 class="head__title">Concept</h2>
-        </header>
+      <section class="concept2" id="concept">
+        <h2 class="concept2__title">Concept</h2>
+        <!-- イラスト  assets/photos/concept-art.png を入れると、ここに出る(無ければ何も出ない) -->
+        <img class="concept2__art" src="assets/photos/concept-art.png" alt="" onerror="this.remove()" />
 
-        <div class="arch" data-reveal>
-          <p>“ ちゃんと伝える<br />ちゃんと受け取る ”</p>
-        </div>
+        <p class="concept2__quote" data-reveal>“ ちゃんと伝える<br />ちゃんと受け取る ”</p>
 
-        <div class="concept__copy text-center">
+        <div class="concept2__copy">
           <p data-reveal>
-            素直な気持ちのキャッチボールは二人の中の熱を高めていく<br />
-            嬉しい 愛おしい わかってほしい そんな気持ちを受け取り合うことで<br />
-            これからも縁をたいせつにし相手も動きたくなる力へと増幅していく
+            素直な気持ちのキャッチボールは<br />
+            二人の中の熱を高めていく
           </p>
-
           <p data-reveal>
-            この一日を未来の「こうありたい」を叶えるためのはじまりに
+            嬉しい　愛おしい　わかってほしい<br />
+            そんな気持ちを受け取り合うことで<br />
+            これからも縁をたいせつにし<br />
+            相手も動きたくなる力へと増幅していく
+          </p>
+          <p data-reveal>
+            この一日を<br />
+            未来の「こうありたい」を叶えるためのはじまりに
           </p>
         </div>
-        <img class="concept__flower" src="assets/p2-art-blush.png" alt="" />
       </section>
 
       <!-- ===== RSVP ===== -->
-      <section class="sec sec--terra" id="rsvp">
-        <img class="rsvp__flower" src="assets/p2-art-pink.png" alt="" />
-        <h2 class="rsvp__title">R.S.V.P</h2>
-        <div class="text-center">
-          <p data-reveal>
-            お手数ですが<br />
-            <strong>2026年12月4日（金）</strong>までに<br />
-            ご回答をお願いいたします
-          </p>
-        </div>
-        <div class="btn-col" data-reveal>
-          <a class="btn btn--white" href="https://docs.google.com/forms/d/e/1FAIpQLSceiTQsxJZ82voAGPiXna4xVJws0h0hSaHaPVi6BQx3CBKglg/viewform" target="_blank" rel="noreferrer">出欠回答フォームへ</a>
-        </div>
+      <section class="rsvp2" id="rsvp">
+        <h2 class="rsvp2__title">R.S.V.P.</h2>
+        <p class="rsvp2__text" data-reveal>
+          誠に勝手ながら<br />
+          <strong>2026年12月4日（金）</strong>まで<br />
+          ご回答いただけましたら幸いです
+        </p>
+        <a class="rsvp2__circle" href="https://docs.google.com/forms/d/e/1FAIpQLSceiTQsxJZ82voAGPiXna4xVJws0h0hSaHaPVi6BQx3CBKglg/viewform" target="_blank" rel="noreferrer" data-reveal>
+          <svg class="rsvp2__mail" viewBox="0 0 100 72" aria-hidden="true">
+            <path d="M8 10 Q7 6 12 6 L88 7 Q93 7 93 12 L92 62 Q92 66 87 66 L13 65 Q8 65 8 60 Z" />
+            <path d="M10 10 L50 42 L90 10" />
+            <path d="M10 63 L38 34 M90 63 L62 34" />
+          </svg>
+          <span class="rsvp2__go">出欠のご回答はこちら ↗</span>
+          <span class="rsvp2__small">（Googleフォームが開きます）</span>
+        </a>
       </section>
 
-      <footer class="footer">
-        <p class="footer__thanks">Thank you!</p>
-        <p class="footer__small">KOTA &amp; CHIHARU ・ 2027.01.30</p>
+      <footer class="soon">
+        <p class="soon__title">See you soon!</p>
+        <p class="soon__text">続きは1月30日に！</p>
       </footer>
     </main>
 
