@@ -922,3 +922,16 @@ body { background: var(--terra); font-size: 15px; }
   font-size: 18px;
   letter-spacing: .08em;
 }
+
+.prof__text { margin-top: 22px; }
+
+.prof__text p {
+  font-family: var(--jp);
+  font-size: 14.5px;
+  line-height: 2.2;
+  letter-spacing: .06em;
+  word-break: auto-phrase;
+  text-wrap: balance;
+}
+
+.prof__text p + p { margin-top: 1.5em; }
