@@ -1161,3 +1161,26 @@ body { background: var(--terra); font-size: 15px; }
   font-weight: 500;
   letter-spacing: .1em;
 }
+
+/* コンセプトの言葉「Amplify」 */
+.concept2__art { width: min(20cqw, 90px); margin: 22px auto 0; }
+.concept2__copy { margin-top: 30px; }
+
+.concept2__word {
+  margin-top: 56px;
+  color: #3A3833;
+  font-family: "Ampersand", sans-serif;
+  font-size: 46px;
+  line-height: 1.1;
+}
+
+.concept2__ja {
+  margin-top: 4px;
+  font-family: var(--jp);
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: .08em;
+}
+
+.concept2__ja + .concept2__copy { margin-top: 52px; }
+.concept2__copy p { font-size: 14px; line-height: 1.85; }
