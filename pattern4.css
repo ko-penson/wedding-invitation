@@ -1184,3 +1184,21 @@ body { background: var(--terra); font-size: 15px; }
 
 .concept2__ja + .concept2__copy { margin-top: 52px; }
 .concept2__copy p { font-size: 14px; line-height: 1.85; }
+
+/* 2026-11-05 修正:Ampersandの見出しとトップの文字を太く(字体はそのまま) */
+.std, .hero .hero__date, .greet__title, .profile__title, .details__title,
+.concept2__title, .rsvp2__title, .soon__title {
+  font-weight: 700;
+  -webkit-text-stroke: .045em currentColor;
+}
+
+.std, .hero .hero__date { -webkit-text-stroke-width: .035em; }
+
+/* 地図の下のボタンは、ほかの本文と同じ字体に */
+.details .btn { font-family: var(--geo); font-size: 14px; letter-spacing: .12em; }
+
+/* Amplify は見本の文字画像をそのまま使う */
+.concept2__word img { width: min(64cqw, 250px); margin: 0 auto; }
+
+/* 手描きの封筒 */
+img.rsvp2__mail { width: 42%; }
