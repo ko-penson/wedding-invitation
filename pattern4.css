@@ -1289,3 +1289,18 @@ img.rsvp2__mail { width: 42%; }
 .details__venue .details__label { margin-top: 50px; }
 .details__name { margin-top: 9px; }
 .details__addr { margin-top: 4px; }
+
+/* ===== トップ:見本の文字を画像で、写真の枠を基準に同じ比率で置く(2026-11-12) ===== */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.hero__video, .hero__frame {
+  position: absolute;
+  top: 15.885%;
+  left: 50%;
+  height: calc(var(--h) * .6471);
+  width: min(76.56cqw, calc(var(--h) * .6471 * .6658));
+  transform: translateX(-50%);
+}
+.hero__frame { z-index: 2; pointer-events: none; }
+.hero__frame img { position: absolute; max-width: none; height: auto; }
+.hero__std-img  { left: -6.667%; top: -18.025%; width: 116.735%; }
+.hero__date-img { left: 58.912%; top: 80.344%;  width: 49.524%; }

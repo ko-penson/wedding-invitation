@@ -15,7 +15,7 @@
       rel="stylesheet"
     />
     <link rel="preload" as="font" type="font/ttf" href="assets/ampersand.ttf" crossorigin />
-        <link rel="stylesheet" href="pattern4.css?v=p4n" />
+        <link rel="stylesheet" href="pattern4.css?v=p4o" />
     <script>document.documentElement.classList.add("js");</script>
   </head>
 
@@ -44,8 +44,12 @@
             <source src="assets/hero.mp4?v=20261109" type="video/mp4" />
           </video>
         </div>
-        <h1 class="std" aria-label="Save the Date">Save<span>the</span><span>Date!!</span></h1>
-        <p class="hero__date" aria-label="1月30日"><span>01</span><span>30</span></p>
+        <h1 class="sr-only">Save the Date!! 1月30日</h1>
+        <!-- 見本画像から切り抜いた文字。写真の枠を基準に、見本と同じ比率で置く -->
+        <div class="hero__frame" aria-hidden="true">
+          <img class="hero__std-img" src="assets/hero-std.png?v=1" alt="" />
+          <img class="hero__date-img" src="assets/hero-date.png?v=1" alt="" />
+        </div>
       </section>
 
       <!-- ===== カウントダウン ===== -->
