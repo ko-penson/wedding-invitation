@@ -1304,3 +1304,20 @@ img.rsvp2__mail { width: 42%; }
 .hero__frame img { position: absolute; max-width: none; height: auto; }
 .hero__std-img  { left: -6.667%; top: -18.025%; width: 116.735%; }
 .hero__date-img { left: 58.912%; top: 80.344%;  width: 49.524%; }
+
+/* ===== 2026-11-13 修正 ===== */
+/* トップの写真を約15%大きく(縦横比はそのまま・中央)。上端の位置は今のまま、下に伸ばす */
+.hero__video {
+  height: calc(var(--h) * .6471 * 1.15);
+  width: min(76.56cqw * 1.15, calc(var(--h) * .6471 * 1.15 * .6658));
+}
+/* 文字の大きさは変えず、01 30 だけ写真の下端に合わせて下げる(写真の下端にかかる重なり方を今と同じに) */
+.hero__date-img { top: 95.344%; }
+
+/* 各セクションの見出し:疑似の太字をやめて、0.5pxの縁取りだけにする(今より細く) */
+.greet__title, .profile__title, .details__title,
+.concept2__title, .rsvp2__title, .soon__title {
+  font-weight: 400;
+  font-synthesis: none;
+  -webkit-text-stroke: .5px currentColor;
+}
