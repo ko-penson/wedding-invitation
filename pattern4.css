@@ -1213,3 +1213,79 @@ img.rsvp2__mail { width: 42%; }
   margin-top: 14px;
 }
 .greet__sign img { height: 30px; width: auto; max-width: 44%; max-height: none; }
+
+/* ===== 2026-11-12 修正 ===== */
+/* メッセージの行間をコンセプトの本文にそろえる */
+.prof__text p { line-height: 1.85; }
+.prof__text p + p { margin-top: 1.6em; }
+
+/* トップ:見本どおりの文字の大きさと位置 */
+.hero__video {
+  top: 16%;
+  height: calc(var(--h) * .645);
+  width: min(76.5cqw, calc(var(--h) * .645 * .667));
+}
+.std {
+  top: max(6.2%, env(safe-area-inset-top));
+  left: 7cqw;
+  font-size: min(18cqw, calc(var(--h) * .102), 104px);
+  line-height: .56;
+}
+.std span { margin-left: 29.3cqw; }
+.std span + span { margin-left: 46.6cqw; }
+.hero .hero__date {
+  right: 5.8cqw;
+  bottom: 13%;
+  font-size: min(30cqw, calc(var(--h) * .168), 150px);
+  line-height: .51;
+}
+.hero__date span:first-child { margin-right: .5em; }
+
+/* The Details:見本どおりの配置 */
+.details__top { position: static; }
+.details__title { padding-left: 25cqw; font-size: min(9.6cqw, 42px); }
+.details__title span { margin-left: 4.6cqw; }
+.details__label { margin-top: 30px; font-size: 18px; }
+.details__year { margin-top: 8px; font-size: 35px; }
+.details__day { font-size: 35px; }
+.details__day small { font-size: .62em; font-weight: 600; }
+.details__start { margin-top: 22px; font-size: 30px; font-weight: 300; }
+.details__start span { font-size: 16px; }
+.details__sub { margin-top: 4px; font-size: 14px; word-spacing: .1em; }
+.details__note {
+  width: min(64cqw, 280px);
+  margin-top: 10px;
+  padding-top: 8px;
+  font-size: 11px;
+  letter-spacing: .03em;
+  white-space: nowrap;
+}
+.details__venue .details__label { margin-top: 50px; }
+.details__name { margin-top: 6px; font-size: min(8.4cqw, 34px); }
+.details__addr { margin-top: 8px; font-size: 11.5px; line-height: 1.45; letter-spacing: .08em; }
+.details__hand--ring    { left: auto; right: 0; top: 64px;  width: 20cqw; }
+.details__hand--wine    { left: 0; right: auto; top: 190px; width: 19.5cqw; }
+.details__hand--martini { left: auto; right: 0; top: 376px; width: 18.5cqw; }
+.details__hand--phone   { left: 0; right: auto; top: 470px; width: 23.5cqw; }
+/* トップの文字は見本どおり太字をやめて、字間を広げる */
+.std, .hero .hero__date { font-weight: 400; -webkit-text-stroke: 0; }
+.std { font-size: min(19.5cqw, calc(var(--h) * .11), 112px); letter-spacing: .09em; }
+.hero .hero__date { font-size: min(28cqw, calc(var(--h) * .157), 140px); letter-spacing: .3em; margin-right: -.3em; }
+.std { line-height: .5; letter-spacing: .035em; -webkit-text-stroke: .02em currentColor; }
+.hero .hero__date { font-size: min(30.8cqw, calc(var(--h) * .173), 154px); line-height: .52; letter-spacing: .12em; margin-right: -.12em; -webkit-text-stroke: .02em currentColor; }
+.hero__date span:first-child { margin-right: .42em; }
+.std { font-size: min(18.6cqw, calc(var(--h) * .105), 106px); line-height: .5; letter-spacing: .01em; }
+#date.details { padding-top: 24px; }
+.details__label { margin-top: 28px; line-height: 1.3; }
+.details__year { margin-top: 4px; }
+.details__start { margin-top: 18px; font-size: 27px; line-height: 1.2; }
+.details__sub { margin-top: 2px; line-height: 1.4; }
+.details__note { margin-top: 8px; padding-top: 7px; line-height: 1.5; }
+.details__venue .details__label { margin-top: 42px; }
+.details__name { margin-top: 2px; }
+.details__start { margin-top: 29px; }
+.details__sub { margin-top: 8px; }
+.details__note { margin-top: 11px; }
+.details__venue .details__label { margin-top: 50px; }
+.details__name { margin-top: 9px; }
+.details__addr { margin-top: 4px; }
