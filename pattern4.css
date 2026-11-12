@@ -1202,3 +1202,14 @@ body { background: var(--terra); font-size: 15px; }
 
 /* 手描きの封筒 */
 img.rsvp2__mail { width: 42%; }
+
+/* 手書きの名前（左：皓太／右：千春） 2026-11-12 */
+.greet__sign {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8%;
+  height: auto;
+  margin-top: 14px;
+}
+.greet__sign img { height: 30px; width: auto; max-width: 44%; max-height: none; }
