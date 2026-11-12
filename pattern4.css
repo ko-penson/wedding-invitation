@@ -150,7 +150,7 @@ body.menu-open .menu { opacity: 1; visibility: visible; }
   width: min(80cqw, calc(var(--h) * .69 * .66));
   transform: translateX(-50%);
   overflow: hidden;
-  background: #9fa79a url("assets/hero-poster.jpg?v=20261113") center / cover;
+  background: #9fa79a url("assets/hero-poster.jpg?v=20261113b") center / cover;
 }
 
 .hero__video video {
